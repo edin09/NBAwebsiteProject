@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>NBA League Pass</title>
+      <link rel="stylesheet" href="style.css"/>
+      <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+      <link rel="icon" type="image/png" href="icons/NBA.png">
+      <meta property="og:title" content="NBA Sign Up / Login">
+      <meta property="og:description" content="Join the NBA community! Sign up or log in to follow your favorite teams and players.">
+      <meta property="og:image" content="trivia_pics/nba.avif">
+      <meta property="og:image:alt" content="NBA Sign Up and Login Page">
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="https://tvoja-stranica.com">
+      <meta property="og:site_name" content="NBA Fan Platform">
+      <!-- Twitter/X specifični tagovi (opcionalno za bolji prikaz) -->
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:image" content="trivia_pics/nba.avif">
+      <meta name="description" content="Join the NBA Fan Platform! Sign up or log in to follow your favorite NBA teams and players.">
+   </head>
+   <body>
+      <header>
+         <div class="header-container">
+            <div class="hamburger">
+               <div></div>
+               <div></div>
+               <div></div>
+            </div>
+            <div class="logo-container">
+               <img src="icons/nba_logo.svg" alt="logoIcon" class="logo">
+            </div>
+            <nav id="main-nav"> 
+               <a href="index.html" class="navigation">Home</a>
+               <a href="players.html" class="navigation">Players</a>
+               <a href="teams.html" class="navigation">Teams</a>
+               <a href="statistics.html" class="navigation">Stats</a>
+               <a href="news.html" class="navigation">News</a>
+               <a href="NBA_Fantasy.html" class="navigation">NBA Fantasy</a>
+               <a href="about_us.html" class="navigation">About Us</a>
+            </nav>
+            <div class="auth-links">
+               <a href="leaguePass.html" class="auth-link league-pass">League Pass</a>
+               <a href="sign_in.html" class="auth-link sign-in">Sign In</a>
+            </div>
+         </div>
+      </header>
+      <section class="cta-banner2">
+         <div class="cta-image-wrapper2">
+            <img src="images/leaguePass3.jpg" alt="NBA Crowd" class="cta-background2">
+         </div>
+      </section>
+      <main class="league-pass-main">
+         <section class="subscription-options">
+         <h2>Choose Your Plan</h2>
+         <div class="cards-container">
+            <div class="subscription-card">
+               <h3>Team Pass</h3>
+               <p class="price">$89.99 / season</p>
+               <ul>
+                  <li>Live and on-demand games for one team</li>
+                  <li>Team-specific highlights</li>
+                  <li>Condensed games</li>
+                  <li>Standard quality streaming</li>
+               </ul>
+               <button class="subscribe-btn" data-plan="team pass">Subscribe Now</button>
+            </div>
+            <div class="subscription-card">
+               <h3>League Pass Basic</h3>
+               <p class="price">$99.99 / season</p>
+               <ul>
+                  <li>Live and on-demand games</li>
+                  <li>Condensed games</li>
+                  <li>Multi-game view</li>
+                  <li>Standard quality streaming</li>
+               </ul>
+               <button class="subscribe-btn" data-plan="basic pass">Subscribe Now</button>
+            </div>
+            <div class="subscription-card premium">
+               <h3>League Pass Premium</h3>
+               <p class="price">$149.99 / season</p>
+               <ul>
+                  <li>All Basic features</li>
+                  <li>No commercials</li>
+                  <li>HD streaming</li>
+                  <li>Download games for offline viewing</li>
+                  <li>Exclusive NBA TV content</li>
+               </ul>
+               <button class="subscribe-btn" data-plan="premium pass">Subscribe Now</button>
+            </div>
+         </div>
+         <!-- FAQ Sekcija -->
+         <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+               <button class="faq-question">What is NBA League Pass?</button>
+               <div class="faq-answer">
+                  <p>NBA League Pass gives you access to live and on-demand games, highlights, and exclusive NBA content.</p>
+               </div>
+            </div>
+            <div class="faq-item">
+               <button class="faq-question">Can I watch games on multiple devices?</button>
+               <div class="faq-answer">
+                  <p>Yes! You can stream on your computer, smartphone, tablet, or smart TV.</p>
+               </div>
+            </div>
+            <div class="faq-item">
+               <button class="faq-question">Is there a free trial?</button>
+               <div class="faq-answer">
+                  <p>NBA League Pass occasionally offers free trial periods during the season. Check the site for promotions.</p>
+               </div>
+            </div>
+            <div class="faq-item">
+               <button class="faq-question">Can I cancel anytime?</button>
+               <div class="faq-answer">
+                  <p>Yes, you can cancel your subscription at any time without extra charges.</p>
+               </div>
+            </div>
+         </section>
+         <!-- Payment Modal -->
+         <div id="payment-modal" class="modal">
+            <div class="modal-content">
+               <span class="close">&times;</span>
+               <h2>Enter Payment Details</h2>
+               <form id="payment-form">
+                  <label>
+                  Card Number:
+                  <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19">
+                  </label>
+                  <label>
+                  Expiry Date:
+                  <input type="text" id="expiry-date" placeholder="MM/YY" maxlength="5">
+                  </label>
+                  <label>
+                  CVV:
+                  <input type="text" id="cvv" placeholder="123" required>
+                  </label>
+                  <label>
+                  Email:
+                  <input type="email" id="email" placeholder="JohnDoe@example.com" required>
+                  </label>
+                  <button type="submit">Pay Now</button>
+               </form>
+            </div>
+         </div>
+      </main>
+      <!-- Confirmation Popup -->
+      <div id="confirmation-popup" class="popup">
+         <div class="popup-content confirmation-content">
+            <span class="close-popup">&times;</span>
+            <h3>Subscription Confirmed!</h3>
+            <p id="confirmation-info"></p>
+         </div>
+      </div>
+      <div id="cancel-popup" class="popup">
+         <div class="popup-content">
+            <span class="close-popup">&times;</span>
+            <h2>Subscription Cancelled</h2>
+            <p id="cancel-info"></p>
+         </div>
+      </div>
+      <footer class="footer">
+         <div class="footer-line"></div>
+         <!-- Footer links -->
+         <div class="footer-links">
+            <a href="#" data-policy="privacy-policy">Privacy Policy</a><span>|</span>
+            <a href="#" data-policy="eea-uk">EEA/UK Privacy Statement</a><span>|</span>
+            <a href="#" data-policy="brazil">Brazil Privacy Statement</a><span>|</span>
+            <a href="#" data-policy="colorado">Colorado Consumer Privacy Statement</a><span>|</span>
+            <a href="#" data-policy="california">California Consumer Privacy Statement</a><span>|</span>
+            <a href="#" data-policy="terms">Terms of Use</a><span>|</span>
+            <a href="#" data-policy="cookie">Cookie Policy</a><span>|</span>
+            <a href="#" data-policy="accessibility">Accessibility and Closed Captions</a><span>|</span>
+            <a href="#" data-policy="support">Customer Support</a><span>|</span>
+            <a href="#" data-policy="preferences">Manage Preferences</a>
+         </div>
+         <!-- Popup za prikaz policy teksta -->
+         <div class="popup-overlay" id="policy-popup" style="display: none;">
+            <div class="popup-content">
+               <span id="close-popup-x" class="close-x">✕</span>
+               <h3 id="popup-title">Policy Title</h3>
+               <div id="popup-text">Policy text will appear here.</div>
+            </div>
+         </div>
+         <p class="accessibility-note">
+            If you are having difficulty accessing any content on this website, please visit our Accessibility page.
+         </p>
+         <div class="footer-bottom">
+            <div class="bottom-left">
+               <p class="bottom-text">
+                  © 2025 NBA Media Ventures, LLC. All rights reserved.<br>
+                  NBA.com is part of Warner Media, LLC’s Turner Sports
+               </p>
+               <div class="footer-logo">
+                  <img src="icons/warner_media_logo.png" alt="Warner Media Logo">
+               </div>
+            </div>
+            <div class="logo-footer">
+               <img src="icons/nba_logo.svg" alt="NBA Logo" class="logo">
+            </div>
+            <div class="social-media">
+               <p class="social-text">Find us on social media</p>
+               <div class="social-icons">
+                  <a href="https://www.facebook.com/nba" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                  <a href="https://www.instagram.com/nba/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                  <a href="https://www.snapchat.com/@nba" target="_blank" aria-label="Snapchat"><i class="fab fa-snapchat-ghost"></i></a>
+                  <a href="https://www.tiktok.com/@nba" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                  <a href="https://x.com/nba" target="_blank" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+                  <a href="https://www.youtube.com/@NBA" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                  <a href="https://www.twitch.tv/nba" target="_blank" aria-label="Twitch"><i class="fab fa-twitch"></i></a>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <script src="leaguePassScript.js"></script>
+   </body>
+</html>

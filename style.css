@@ -1,0 +1,4418 @@
+body {
+	margin: 0;
+	padding: 0;
+	line-height: 1.6;
+	background: #f4f4f9;
+	color: #2c2c2c;
+}
+
+header {
+	background: #121212;
+	padding: 10px 0;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	position: sticky;
+	top: 0;
+	z-index: 9999;
+}
+
+.header-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 2%;
+	max-width: 1300px;
+	margin: 0 auto;
+	gap: 10px;
+}
+
+.logo-container {
+	display: flex;
+	align-items: center;
+	flex-shrink: 0;
+}
+
+.logo {
+	height: auto;
+	max-height: 100px;
+	margin: 0;
+	padding: 0;
+	transition: transform 0.25s ease-in-out, filter 0.25s ease-in-out;
+	cursor: pointer;
+}
+
+#main-nav {
+	display: flex;
+	gap: 20px;
+	flex: 1;
+	justify-content: center;
+	align-items: center;
+	align-self: center;
+}
+
+.navigation {
+	text-decoration: none;
+	color: white;
+	font-family: "Bebas Neue", sans-serif;
+	font-size: 1.3rem;
+	padding: 10px 15px;
+	transition: background-color 0.3s ease, color 0.3s ease;
+	border-radius: 5px;
+	letter-spacing: 0.5px;
+}
+
+.navigation:hover {
+	background-color: #1e1e1e;
+	color: #f4f4f9;
+}
+
+.auth-links {
+	display: flex;
+	gap: 15px;
+	align-items: center;
+	margin-left: auto;
+	flex-shrink: 0;
+}
+
+.auth-link {
+	font-family: "Bebas Neue", sans-serif;
+	font-size: 1.1rem;
+	text-decoration: none;
+	border-radius: 4px;
+	transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+	letter-spacing: 0.5px;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 120px;
+	height: 60px;
+}
+
+/* League Pass - žuto dugme */
+.league-pass {
+	background-color: #ffcc00;
+	color: #121212;
+	border: none;
+}
+
+.league-pass:hover {
+	background-color: #e6b800;
+	color: #000;
+}
+
+/* Sign In/Profile - bijelo dugme */
+.sign-in,
+.profile {
+	background-color: #ffffff;
+	color: #121212;
+	border: none;
+}
+
+.sign-in:hover,
+.profile:hover {
+	background-color: #e6e6e6;
+	color: #000;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile .profile-container {
+	display: flex;
+	align-items: center;
+	/* vertikalno poravnanje */
+	justify-content: flex-start;
+	/* sadržaj počinje od lijeve strane */
+	width: 100%;
+	height: 100%;
+	background-color: #ffffff;
+	border-radius: 4px;
+	overflow: hidden;
+	gap: 4px;
+	/* razmak između slike i username-a */
+	padding: 0 20px;
+	/* malo unutrašnjeg prostora */
+}
+
+.profile-pic {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	object-fit: cover;
+	flex-shrink: 0;
+	/* sprječava smanjivanje slike */
+}
+
+.username {
+	font-family: "Bebas Neue", sans-serif;
+	font-size: 1.1rem;
+	font-weight: bold;
+	color: #121212;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/* Osiguraj da se footer proteže do dna */
+html,
+body {
+	margin: 0;
+	padding: 0;
+	height: auto;
+}
+
+body {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.content {
+	flex: 1;
+}
+
+.footer {
+	background-color: #121212;
+	color: #f4f4f9;
+	padding: 30px 10px 20px;
+	margin-top: auto;
+	width: 100%;
+}
+
+.footer-line {
+	width: 100%;
+	max-width: 1800px;
+	/* ili 90%, ako želiš postotke */
+	height: 1px;
+	background-color: white;
+	margin: 0 auto 20px;
+	/* auto margin centriranje */
+}
+
+/* Linkovi iznad bottom sekcije */
+.footer-links {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 10px;
+	margin-bottom: 15px;
+	text-align: center;
+}
+
+.footer-links a {
+	color: #f4f4f9;
+	font-size: 1rem;
+	text-decoration: none;
+	font-family: "Bebas Neue", sans-serif;
+	transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+	color: #ffcc00;
+}
+
+.footer-links span {
+	margin: 0 6px;
+	color: #888;
+	font-family: "Bebas Neue", sans-serif;
+}
+
+.footer-links a:last-child::after {
+	content: "";
+}
+
+.accessibility-note {
+	font-size: 0.75rem;
+	color: #cccccc;
+	margin: 10px auto 20px;
+	max-width: 800px;
+	font-family: Arial, sans-serif;
+	text-align: center;
+}
+
+/* Donja sekcija footera s 3 kolone */
+.footer-bottom {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 1400px;
+	margin: 0 auto;
+	flex-wrap: wrap;
+	/* responzivnost */
+	padding: 0 20px;
+}
+
+.bottom-left {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	flex: 1;
+	min-width: 250px;
+}
+
+.bottom-text {
+	font-size: 0.8rem;
+	font-family: "Bebas Neue", sans-serif;
+	letter-spacing: 1px;
+	color: #f4f4f9;
+	margin: 0 0 5px 0;
+	text-align: left;
+}
+
+.footer-logo img {
+	max-width: 160px;
+	height: auto;
+	opacity: 0.9;
+	display: block;
+}
+
+.logo-footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+	min-width: 200px;
+}
+
+.logo-footer .logo {
+	max-height: 50px;
+	height: auto;
+	display: block;
+}
+
+.social-media {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex: 1;
+	min-width: 250px;
+}
+
+.social-text {
+	font-size: 1rem;
+	font-family: "Bebas Neue", sans-serif;
+	color: #f4f4f9;
+	margin-bottom: 8px;
+	opacity: 0.85;
+	text-align: center;
+}
+
+.social-icons {
+	display: flex;
+	gap: 16px;
+	justify-content: flex-end;
+}
+
+.social-icons a i {
+	font-size: 24px;
+	color: #f4f4f9;
+	opacity: 0.85;
+	transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover i {
+	opacity: 1;
+	color: #ffcc00;
+}
+
+body {
+	overflow-x: hidden;
+}
+
+.bottom-left,
+.logo-footer,
+.social-media {
+	min-width: 0;
+	flex-basis: 0;
+}
+
+.hero {
+	position: relative;
+	width: 100%;
+	height: 90vh;
+	max-height: 800px;
+	overflow: hidden;
+}
+
+.hero-wrapper {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.hero-img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	transition: opacity 1s ease-in-out;
+}
+
+.hero-img.active {
+	opacity: 1;
+}
+
+.slideshow {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+/* Updated dots positioning */
+.slideshow-dots {
+	position: absolute;
+	bottom: 20px;
+	/* Space below related-content */
+	left: 30px;
+	/* Align with hero-overlay padding */
+	text-align: left;
+	/* Left-align dots */
+	z-index: 15;
+	/* Above slideshow images and overlay */
+}
+
+.dot {
+	cursor: pointer;
+	height: 12px;
+	width: 12px;
+	margin: 0 6px;
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.3s ease;
+}
+
+.dot.active,
+.dot:hover {
+	background-color: #ffcc00;
+	/* Yellow to match theme */
+}
+
+.hero-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 35%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.65);
+	color: white;
+	padding: 40px 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-family: "Bebas Neue", sans-serif;
+	z-index: 10;
+}
+
+.hero-overlay h2 {
+	font-size: 2.8rem;
+	margin-bottom: 20px;
+	line-height: 1.2;
+	text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero-overlay p {
+	font-size: 1.1rem;
+	line-height: 1.6;
+	margin-bottom: 25px;
+	text-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
+}
+
+.cta-button {
+	display: inline-block;
+	background-color: #ffcc00;
+	color: #121212;
+	padding: 8px 16px;
+	border-radius: 5px;
+	text-decoration: none;
+	font-size: 1rem;
+	font-weight: bold;
+	margin-bottom: 20px;
+	transition: background-color 0.3s ease;
+	max-width: 100px;
+	text-align: center;
+	box-shadow: 0 2px 6px rgba(255, 204, 0, 0.4);
+}
+
+.cta-button:hover {
+	background-color: #e6b800;
+	box-shadow: 0 4px 10px rgba(230, 184, 0, 0.6);
+}
+
+/* RELATED CONTENT (unchanged) */
+.related-content {
+	font-size: 1rem;
+	color: #ffffff;
+	margin-top: 32px;
+	line-height: 1.7;
+	font-family: "Oswald", Tahoma, Geneva, Verdana, sans-serif;
+	max-width: 100%;
+	padding-left: 8px;
+	letter-spacing: 0.02em;
+}
+
+.related-content strong {
+	display: block;
+	margin-bottom: 14px;
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: #ffffff;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	font-family: "Bebas Neue", cursive;
+}
+
+.related-content ul {
+	list-style: none;
+	padding-left: 0;
+	margin: 0;
+}
+
+.related-content li {
+	margin-bottom: 12px;
+	position: relative;
+	padding-left: 16px;
+	font-weight: 100;
+	color: #ffffff;
+	transition: color 0.25s ease;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 100%;
+}
+
+.related-content li::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 9px;
+	height: 9px;
+	background-color: #ffcc00;
+	border-radius: 50%;
+}
+
+.related-content a {
+	color: #ffffff;
+	font-weight: 500;
+	font-size: large;
+	font-family: "Bebas Neue", Tahoma, Geneva, Verdana, sans-serif;
+	text-decoration: none;
+	padding-bottom: 2px;
+	background-image: linear-gradient(#ffcc00, #ffcc00);
+	background-size: 0 2px;
+	background-repeat: no-repeat;
+	background-position: bottom left;
+	transition: background-size 0.4s ease, color 0.3s ease;
+}
+
+.related-content a:hover,
+.related-content a:focus {
+	color: #f0f0f0;
+	background-size: 100% 2px;
+	outline: none;
+}
+
+.related-content a:focus-visible {
+	outline: 2px solid #ffcc00;
+	outline-offset: 3px;
+	background-size: 100% 2px;
+}
+
+.news-section {
+	padding: 60px 20px;
+	background-color: #121212;
+	color: #ffffff;
+	font-family: "Oswald", sans-serif;
+	position: relative;
+	z-index: 1;
+}
+
+.section-title {
+	font-family: "Bebas Neue", cursive;
+	font-size: 2.5rem;
+	color: white;
+	text-align: left;
+	margin-bottom: 40px;
+	padding-left: 8px;
+}
+
+.news-grid {
+	display: flex;
+	justify-content: space-between;
+	/* Rasporedi boxove ravnomjerno */
+	flex-wrap: wrap;
+	/* Ako bude premala širina, prelama u novi red */
+	gap: 12px;
+	/* Razmak između boxova */
+	padding: 0 8px;
+	position: relative;
+	z-index: 1;
+}
+
+.news-card {
+	background-color: #1e1e1e;
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	width: calc(20% - 10px);
+	/* 5 u jednom redu */
+	display: flex;
+	flex-direction: column;
+}
+
+.news-card:hover {
+	transform: translateY(-4px);
+	box-shadow: none;
+}
+
+.news-card img {
+	width: 100%;
+	height: 180px;
+	object-fit: cover;
+}
+
+.news-content {
+	padding: 12px;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.news-content h3 {
+	font-size: 1.4rem;
+	margin-bottom: 6px;
+	color: #ffffff;
+	font-family: "Bebas Neue", sans-serif;
+}
+
+.news-content p {
+	font-size: 0.85rem;
+	color: #cccccc;
+	flex-grow: 1;
+	margin-bottom: 10px;
+}
+
+.read-more {
+	font-size: 1rem;
+	font-family: "Bebas Neue", cursive;
+	color: white;
+	text-decoration: none;
+	border-bottom: 1px solid transparent;
+	transition: border-color 0.3s ease;
+	align-self: flex-start;
+}
+
+.read-more:hover {
+	border-color: #ffffff;
+	color: #ffffff;
+}
+
+.featured-section {
+	padding: 60px 20px;
+	background-color: #181818;
+	color: #fff;
+	font-family: "Oswald", sans-serif;
+}
+
+.section-title2 {
+	font-family: "Bebas Neue", cursive;
+	font-size: 2.5rem;
+	color: white;
+	text-align: left;
+	margin-bottom: 40px;
+	padding-left: 8px;
+}
+
+.players-grid2 {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 20px;
+}
+
+.player-card2 {
+	background-color: #1e1e1e;
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	display: flex;
+	flex-direction: column;
+}
+
+.player-card2:hover {
+	transform: translateY(-4px);
+	box-shadow: white;
+}
+
+.player-card2 img {
+	width: 100%;
+	height: 400px;
+	/* manja visina slike */
+	object-fit: cover;
+}
+
+.player-info2 {
+	padding: 12px;
+	display: flex;
+	flex-direction: column;
+	min-width: 1000px;
+	/* Adjust this value based on your content */
+	text-align: left;
+	align-items: flex-start;
+}
+
+.player-info2 h3 {
+	font-family: "Bebas Neue", sans-serif;
+	font-size: 1.5rem;
+	margin-bottom: 1px;
+	color: #ffffff;
+}
+
+.player-info2.team {
+	font-size: 0.9rem;
+	color: #cccccc;
+	margin-bottom: 1px;
+	text-align: left;
+}
+
+.player-info2 .position {
+	font-size: 1rem;
+	color: #ffcc00;
+	margin-bottom: 4px;
+}
+
+.player-info2 .bio {
+	font-size: 0.9rem;
+	color: #aaaaaa;
+	margin-bottom: 10px;
+	flex-grow: 1;
+}
+
+.profile-btn {
+	align-self: flex-start;
+	font-family: "Bebas Neue", cursive;
+	font-size: 1.2rem;
+	background-color: white;
+	color: #121212;
+	padding: 4px 10px;
+	border-radius: 4px;
+	text-decoration: none;
+	transition: background-color 0.3s ease;
+}
+
+.profile-btn:hover {
+	background-color: white;
+}
+
+/* Reset default margins for <p> tags */
+p {
+	margin: 0;
+}
+
+/* Schedule section styles */
+.schedule-section {
+	background-color: #0f0f0f;
+	padding: 60px 20px;
+	font-family: "Helvetica Neue", sans-serif;
+	color: #ffffff;
+}
+
+.schedule-section h2 {
+	font-size: 3rem;
+	color: white;
+	text-align: center;
+	margin-bottom: 50px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-family: "Bebas Neue";
+}
+
+.schedule-cards {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 24px;
+	justify-content: center;
+}
+
+.schedule-card {
+	background: linear-gradient(145deg, #1c1c1c, #2a2a2a);
+	border: 1px solid #2f2f2f;
+	border-radius: 20px;
+	padding: 24px;
+	width: 360px;
+	box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+	transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+	position: relative;
+	/* For overlay and absolute positioning */
+}
+
+.schedule-card:hover {
+	transform: translateY(-6px) scale(1.03);
+	box-shadow: 0 12px 35px rgba(255, 255, 255, 0.08);
+	border-color: #444;
+}
+
+/* Vertical split background (straight line through the middle) */
+.schedule-card:has(.team.heat):has(.team.nuggets):hover {
+	background: linear-gradient(to right,
+			#98002e 0%,
+			#98002e 49.9%,
+			#0e2240 50.1%,
+			#0e2240 100%);
+}
+
+.schedule-card:has(.team.warriors):has(.team.lakers):hover {
+	background: linear-gradient(to right,
+			#1d428a 0%,
+			#1d428a 49.9%,
+			#552583 50.1%,
+			#552583 100%);
+}
+
+.schedule-card:has(.team.celtics):has(.team.cavs):hover {
+	background: linear-gradient(to right,
+			#007a33 0%,
+			#007a33 49.9%,
+			#6f263d 50.1%,
+			#6f263d 100%);
+}
+
+/* Overlay to improve text visibility on hover */
+.schedule-card:hover::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.3);
+	/* Semi-transparent black overlay */
+	border-radius: 20px;
+	z-index: 1;
+}
+
+/* Ensure text stays above overlay */
+.team-info,
+.game-details {
+	position: relative;
+	z-index: 2;
+}
+
+/* Enhance text visibility on hover */
+.schedule-card:hover .team-name {
+	text-shadow: 0 0 8px rgba(255, 255, 255, 0.5), 0 0 4px rgba(0, 0, 0, 0.8);
+	color: #ffffff;
+	/* White for better contrast */
+}
+
+.schedule-card:hover .vs {
+	text-shadow: 0 0 8px rgba(255, 255, 255, 0.5), 0 0 4px rgba(0, 0, 0, 0.8);
+	color: #ffffff;
+}
+
+.schedule-card:hover .game-details,
+.schedule-card:hover .game-details p {
+	text-shadow: 0 0 8px rgba(255, 255, 255, 0.5), 0 0 4px rgba(0, 0, 0, 0.8);
+	color: #ffffff;
+}
+
+.team-info {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 14px;
+	position: relative;
+	/* For absolute positioning of .vs */
+}
+
+.team-logo {
+	height: 48px;
+	width: 48px;
+	object-fit: contain;
+	margin-bottom: 6px;
+}
+
+.team {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* Center logo and team name */
+	text-align: center;
+	/* Center text */
+	width: 100px;
+	/* Fixed width to balance spacing */
+}
+
+.team-name {
+	font-size: 1.1rem;
+	font-weight: 700;
+	text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+.vs {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 1.3rem;
+	font-weight: bold;
+	color: #999999;
+	text-shadow: 0 0 2px rgba(255, 255, 255, 0.07);
+	z-index: 3;
+	/* Above overlay and gradient */
+}
+
+.game-details {
+	font-size: 0.95rem;
+	color: #cccccc;
+	text-align: center;
+	font-style: italic;
+	opacity: 0.9;
+}
+
+/* Team-specific colors */
+.lakers span {
+	color: #fdb927;
+}
+
+.warriors span {
+	color: #1d428a;
+}
+
+.celtics span {
+	color: #007a33;
+}
+
+.cavs span {
+	color: #6f263d;
+}
+
+.nuggets span {
+	color: #fdb927;
+}
+
+.heat span {
+	color: #98002e;
+}
+
+.cta-banner {
+	position: relative;
+	width: 100%;
+	height: 65vh;
+	min-height: 400px;
+	overflow: hidden;
+	font-family: "Bebas Neue", sans-serif;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.cta-image-wrapper {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.cta-background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	opacity: 0.9;
+	z-index: 1;
+}
+
+.cta-overlay {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 36%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.65);
+	color: white;
+	padding: 50px 40px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	z-index: 2;
+}
+
+.cta-overlay h2 {
+	font-size: 3rem;
+	margin-bottom: 20px;
+	text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+	color: #ffcc00;
+}
+
+.cta-overlay p {
+	font-size: 1.4rem;
+	line-height: 16.;
+	margin-bottom: 30px;
+	color: #dddddd;
+	text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+.cta-button {
+	display: inline-block;
+	background-color: #ffcc00;
+	color: #121212;
+	padding: 10px 22px;
+	border-radius: 6px;
+	text-decoration: none;
+	font-size: 1.5rem;
+	font-weight: bold;
+	text-align: center;
+	max-width: 140px;
+	transition: background-color 0.3s ease, transform 0.2s ease;
+	box-shadow: 0 4px 10px rgba(255, 204, 0, 0.3);
+}
+
+.cta-button:hover {
+	background-color: #e6b800;
+	transform: scale(1.05);
+	box-shadow: 0 6px 14px rgba(230, 184, 0, 0.5);
+	color: #000;
+}
+
+/* Ensure the page background is dark */
+body {
+	background: #121212;
+	/* Match header and footer */
+	color: #f4f4f9;
+	margin: 0;
+	padding: 0;
+	line-height: 1.6;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	overflow-x: hidden;
+}
+
+/* Title */
+.title {
+	text-align: center;
+	font-size: 2.5rem;
+	color: white;
+	margin: 40px 0;
+	font-family: "Bebas Neue", sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Table Container */
+.table-container {
+	width: 100%;
+	/* Full screen width */
+	max-width: none;
+	padding: 0 20px;
+	margin: 0 auto;
+	background-color: #121212;
+}
+
+.table-container {
+	scrollbar-width: none;
+	/* Firefox */
+	-ms-overflow-style: none;
+	/* IE/Edge */
+}
+
+/* Chrome, Edge, Safari */
+.table-container::-webkit-scrollbar {
+	display: none;
+}
+
+/* Stilovi za slike igrača i logoe timova */
+.player-img {
+	width: 100px;
+	height: 100px;
+	vertical-align: middle;
+	margin-right: 8px;
+	/* Razmak između slike i teksta, usklađen s paddingom tablice */
+	object-fit: contain;
+	/* Osigurava da se logoi timova pravilno skaliraju */
+}
+
+.team-logo {
+	width: 50px;
+	height: 50px;
+	vertical-align: middle;
+	margin-right: 8px;
+	/* Razmak između slike i teksta, usklađen s paddingom tablice */
+	object-fit: contain;
+	/* Osigurava da se logoi timova pravilno skaliraju */
+}
+
+.player-img {
+	width: 100px;
+	height: 100px;
+	border-radius: 8px;
+	object-fit: cover;
+	padding: 4px;
+	background-color: #262626;
+	box-shadow: 0 0 6px rgba(255, 255, 255, 0.1);
+	margin-right: 12px;
+	/* Razmak između slike i imena */
+	transform: translateX(-10px);
+	/* Pomakni sliku malo ulijevo */
+}
+
+.team-logo {
+	border-radius: 4px;
+	/* Blago zaobljeni rubovi za logoe timova */
+	background-color: #2f2f2f;
+	/* Tamna pozadina za kontrast */
+	padding: 2px;
+	/* Minimalni padding za uokvirivanje */
+	transition: transform 0.3s ease;
+	/* Glatki prijelaz za hover efekt */
+}
+
+.team-logo:hover {
+	transform: scale(1.1);
+	/* Blagi zoom efekt na hover, usklađen s .nba-table tr:hover */
+}
+
+/* Container za tabelu sa overflow scroll i max visinom */
+.table-container {
+	width: 100%;
+	max-width: none;
+	padding-left: 0;
+	/* uklonjen lijevi padding */
+	padding-right: 0px;
+	margin: 0 auto;
+	background-color: #121212;
+	max-height: 600px;
+	/* prilagodi visinu prema potrebi */
+	overflow-y: auto;
+	/* vertikalni scroll */
+	overflow-x: hidden;
+	/* sakrij horizontalni scroll */
+	border-radius: 8px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+}
+
+/* Tablica - puni width, border-radius na tbody da se vidi zaokruzeno */
+.nba-table {
+	width: 100%;
+	border-collapse: separate;
+	/* zbog border-radius fiksiranog zaglavlja */
+	border-spacing: 0;
+	background-color: #1e1e1e;
+	font-family: "Oswald", sans-serif;
+}
+
+/* Fiksirani zaglavlje tabele */
+.nba-table thead th {
+	position: sticky;
+	top: 0;
+	background-color: #181818;
+	font-family: "Bebas Neue", sans-serif;
+	font-size: 1.7rem;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: white;
+	padding: 14px 15px;
+	border-bottom: 2px solid white;
+	z-index: 10;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Ćelije tabele */
+.nba-table th,
+.nba-table td {
+	padding: 12px 16px;
+	text-align: left;
+	border-bottom: 1px solid #2f2f2f;
+	color: #ffffff;
+	font-size: 1rem;
+}
+
+/* Hover efekt na redove */
+.nba-table tbody tr:hover {
+	background-color: #2a2a2a;
+	transition: background-color 0.3s ease;
+}
+
+/* Stil slike igrača */
+.player-img {
+	width: 80px;
+	height: 80px;
+	border-radius: 8px;
+	object-fit: cover;
+	padding: 4px;
+	background-color: #262626;
+	box-shadow: 0 0 6px rgba(255, 255, 255, 0.1);
+	margin-right: 12px;
+	vertical-align: middle;
+	transform: translateX(-10px);
+}
+
+/* Stil logo tima */
+.team-logo {
+	width: 40px;
+	height: 40px;
+	border-radius: 4px;
+	background-color: #2f2f2f;
+	padding: 2px;
+	margin-right: 8px;
+	vertical-align: middle;
+	transition: transform 0.3s ease;
+}
+
+.team-logo:hover {
+	transform: scale(1.1);
+}
+
+/* Players header i search input */
+.players-header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 40px;
+	padding: 0 20px;
+}
+
+.players-title {
+	text-align: center;
+	font-size: 2.5rem;
+	color: white;
+	margin: 40px 0 20px;
+	font-family: "Bebas Neue", sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Search bar sa ikonama i stilom */
+#searchInput {
+	width: 400px;
+	max-width: 90%;
+	padding: 14px 20px 14px 48px;
+	border-radius: 12px;
+	border: 1px solid #2f2f2f;
+	font-size: 1.1rem;
+	font-family: "Oswald", sans-serif;
+	background-color: #181818;
+	color: white;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease, transform 0.2s ease;
+	outline: none;
+	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%23ffcc00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>');
+	background-repeat: no-repeat;
+	background-position: 16px center;
+	background-size: 20px;
+}
+
+#searchInput::placeholder {
+	color: white;
+	opacity: 0.9;
+	font-style: italic;
+	font-family: "Oswald", sans-serif;
+}
+
+#searchInput:focus {
+	border-color: white;
+	box-shadow: 0 6px 16px;
+	transform: translateY(-2px);
+	background-color: #1e1e1e;
+}
+
+/* Osiguraj da html i body podržavaju punu visinu */
+
+body {
+	font-family: "Bebas Neue", sans-serif;
+	background-color: #121212;
+	color: white;
+	margin: 0;
+	padding: 0;
+}
+
+.teams {
+	text-align: center;
+	font-size: 4rem;
+	margin: 80px 0 40px;
+	/* gornji i donji razmak po želji */
+}
+
+.conferences-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+.conference-card {
+	flex: 1;
+	min-width: 300px;
+	background-color: #2f2f2f;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.conf-title {
+	text-align: center;
+	font-size: 3rem;
+	margin-bottom: 20px;
+	padding: 20px 0;
+	text-transform: uppercase;
+	border-radius: 10px;
+}
+
+.west-title {
+	background-color: #c8102e;
+}
+
+.east-title {
+	background-color: #1d428a;
+}
+
+.divisions-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	justify-content: space-between;
+}
+
+.division {
+	flex: 1;
+	min-width: 250px;
+	background-color: #3a3a3a;
+	padding: 15px;
+	border-radius: 8px;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.division h3 {
+	font-size: 1.75rem;
+	border-left: 4px solid white;
+	padding-left: 10px;
+	margin-bottom: 10px;
+}
+
+.division ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.division ul li {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 6px 0;
+	font-size: 1.25rem;
+	color: white;
+	/* Bela boja za sav tekst unutar <li> */
+}
+
+.division ul li img {
+	width: 50px;
+	height: 50px;
+	object-fit: contain;
+}
+
+.division ul li a {
+	color: white;
+	/* Bela boja specifično za linkove */
+	text-decoration: none;
+	/* Uklanja podvlačenje linkova */
+}
+
+.division ul li a:hover {
+	text-decoration: underline;
+	/* Podvlačenje na hover */
+}
+
+.schedule-carousel {
+	padding: 90px 20px;
+	text-align: center;
+	background-color: #121212;
+	color: white;
+	font-family: "Bebas Neue", sans-serif;
+	position: relative;
+	font-size: 2rem;
+}
+
+.scheduleTitle {
+	padding: 20px 20px;
+	text-align: center;
+	background-color: #121212;
+	color: white;
+	font-family: "Bebas Neue", sans-serif;
+	position: relative;
+	font-size: 3rem;
+}
+
+.carousel-container {
+	overflow: hidden;
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px 20px;
+	overflow: hidden;
+	position: relative;
+}
+
+.carousel-track {
+	display: flex;
+	transition: transform 0.5s ease;
+	gap: 20px;
+	/* Umjesto margina unutar .game */
+}
+
+.game {
+	flex: 0 0 calc((100% - 30px) / 3);
+	box-sizing: border-box;
+	padding: 20px;
+	background-color: #1e1e1e;
+	border-radius: 15px;
+	text-align: center;
+	color: #fff;
+	min-height: 160px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.matchup {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 50px;
+	font-weight: bold;
+	margin-bottom: 10px;
+	flex-wrap: wrap;
+}
+
+.team {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.team-logoCard {
+	width: 60px;
+	height: 60px;
+	object-fit: contain;
+}
+
+.team-name {
+	color: #fff;
+	font-size: 1.5;
+}
+
+.vs {
+	color: #ffcc00;
+	font-weight: bold;
+}
+
+.datetime,
+.venue {
+	font-size: 1rem;
+	color: #ccc;
+	margin-bottom: 4px;
+}
+
+.arrow {
+	position: absolute;
+	top: 66%;
+	transform: translateY(-50%);
+	font-size: 2.5rem;
+	background: #333;
+	border: none;
+	color: white;
+	cursor: pointer;
+	z-index: 2;
+	width: 65px;
+	height: 80px;
+	border-radius: 8px;
+	opacity: 0.9;
+}
+
+.arrow.left {
+	left: calc(50% - 670px);
+}
+
+.arrow.right {
+	right: calc(50% - 680px);
+}
+
+.cta-banner2 {
+	position: relative;
+	width: 100%;
+	height: 75vh;
+	min-height: 400px;
+	overflow: hidden;
+	font-family: "Bebas Neue", sans-serif;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.cta-image-wrapper {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.cta-background2 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	opacity: 0.9;
+	z-index: 1;
+}
+
+.cta-overlay2 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 35.6%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.65);
+	color: white;
+	padding: 50px 40px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	z-index: 2;
+}
+
+.cta-overlay2 h2 {
+	font-size: 4rem;
+	margin-bottom: 40px;
+	text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+	color: white;
+}
+
+.cta-overlay2 p {
+	font-size: 1.6rem;
+	line-height: 16.;
+	margin-bottom: 40px;
+	color: #dddddd;
+	text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+.cta-button2 {
+	display: inline-block;
+	background-color: #ffcc00;
+	color: #121212;
+	padding: 10px 22px;
+	border-radius: 6px;
+	text-decoration: none;
+	font-size: 1.5rem;
+	font-weight: bold;
+	text-align: center;
+	max-width: 140px;
+	transition: background-color 0.3s ease, transform 0.2s ease;
+	box-shadow: 0 4px 10px rgba(255, 204, 0, 0.3);
+}
+
+.cta-button2:hover {
+	background-color: #e6b800;
+	transform: scale(1.05);
+	box-shadow: 0 6px 14px rgba(230, 184, 0, 0.5);
+	color: #000;
+}
+
+.leaders-section {
+	padding: 60px 20px;
+	background-color: #121212;
+	color: white;
+	font-family: "Bebas Neue", sans-serif;
+	display: flex;
+	flex-direction: column;
+	gap: 80px;
+}
+
+/* Wrapper za svaku sekciju (Player i Team) */
+.leaders-wrapper {
+	background-color: #1e1e1e;
+	padding: 40px;
+	border-radius: 20px;
+	box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+/* Header (naslov i dugmad) */
+.leaders-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1px;
+}
+
+.leaders-header h2 {
+	font-size: 3.5rem;
+	color: white;
+}
+
+.leaders-toggle {
+	display: flex;
+	gap: 10px;
+}
+
+.toggle-button {
+	background-color: #2a2a2a;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	font-size: 1.2rem;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.toggle-button:hover {
+	background-color: #3a3a3a;
+}
+
+.toggle-button.active {
+	background-color: white;
+	color: #121212;
+}
+
+/* Grid za 3x3 statistiku */
+.leaders-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+}
+
+.leader-box {
+	background-color: #2a2a2a;
+	padding: 20px;
+	border-radius: 10px;
+	text-align: center;
+	transition: transform 0.2s ease;
+}
+
+.leader-box:hover {
+	transform: scale(1.03);
+	background-color: #333;
+}
+
+.leader-box h3 {
+	font-size: 2.5rem;
+	margin-bottom: 10px;
+	color: #ffffff;
+	text-align: left;
+}
+
+.leader-box p {
+	font-size: 1.1rem;
+	color: #cccccc;
+}
+
+/* Sakrivanje kartica */
+.hidden {
+	display: none;
+}
+
+.leader-box p {
+	display: flex;
+	align-items: center;
+	flex: start;
+	gap: 15px;
+	font-size: 1.3rem;
+	color: white;
+}
+
+.mugshot {
+	width: 60px;
+	/* prilagodi veličinu */
+	height: 60px;
+	border-radius: 10%;
+	/* za okruglu sliku */
+	object-fit: cover;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+	margin-bottom: 10px;
+	/* ako su u vertikalnom rasporedu */
+}
+
+.mugshot2 {
+	width: 60px;
+	/* Keep the width */
+	height: 60px;
+	/* Match height to width for consistent proportions */
+	object-fit: cover;
+	/* Maintain aspect ratio, cropping if needed */
+	border-radius: 10%;
+	/* Optional: add rounded corners like .mugshot */
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+	/* Match .mugshot shadow */
+	margin-bottom: 10px;
+}
+
+.nba_knowledge {
+	display: flex;
+	justify-content: center;
+	/* Horizontally center */
+	align-items: center;
+	/* Vertically center */
+	width: 100%;
+	/* Full width of parent */
+	padding: 40px 20px;
+	/* Add padding for breathing room */
+	background-color: #121212;
+	/* Match .leaders-section background */
+}
+
+.nba_knowledge_image {
+	display: flex;
+	justify-content: center;
+	/* Center image within div */
+	align-items: center;
+	background-color: #1e1e1e;
+	/* Darker background to frame the image */
+	padding: 15px;
+	/* Space around the image */
+	border-radius: 15px;
+	/* Rounded corners */
+	box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+	/* Subtle glow like .leaders-wrapper */
+	transition: transform 0.3s ease;
+	/* Smooth hover effect */
+}
+
+.nba_knowledge_image:hover {
+	transform: scale(1.03);
+	/* Slight zoom on hover */
+}
+
+.nba_knowledge_link {
+	display: inline-block;
+	/* Ensure link wraps image properly */
+	text-decoration: none;
+	/* Remove default underline */
+	cursor: pointer;
+	/* Indicate clickability */
+}
+
+.cta-background3 {
+	width: 1000px;
+	/* Set a specific width for consistency */
+	height: auto;
+	/* Maintain aspect ratio */
+	display: block;
+	/* Remove inline spacing */
+	border-radius: 10px;
+	/* Slightly rounded image corners */
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+	/* Subtle shadow like .mugshot */
+}
+
+.articles-section {
+	padding: 40px;
+	background-color: #121212;
+	color: #fff;
+	font-family: Arial, sans-serif;
+}
+
+.article-block {
+	margin-bottom: 50px;
+}
+
+.featured-article {
+	display: flex;
+	flex-direction: column;
+	background-color: #1e1e1e;
+	border-radius: 10px;
+	overflow: hidden;
+	margin-bottom: 25px;
+}
+
+.featured-article img {
+	width: 100%;
+	height: 500px;
+	object-fit: contain;
+	/* prikazuje cijelu sliku bez cropanja */
+}
+
+.featured-content {
+	padding: 20px;
+}
+
+.featured-content h2 {
+	font-size: 2rem;
+	margin-bottom: 10px;
+}
+
+.featured-content p {
+	font-size: 1rem;
+	color: #cccccc;
+}
+
+.article-cards {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 15px;
+}
+
+.article-card {
+	background-color: #1e1e1e;
+	border-radius: 10px;
+	overflow: hidden;
+	transition: transform 0.3s ease;
+	display: flex;
+	flex-direction: column;
+}
+
+.article-card:hover {
+	transform: scale(1.03);
+}
+
+.article-card img {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+}
+
+.article-card h3 {
+	padding: 10px 12px 0;
+	font-size: 1rem;
+}
+
+.article-card p {
+	padding: 5px 12px 12px;
+	font-size: 0.9rem;
+	color: #cccccc;
+}
+
+.read-more-btn {
+	display: inline-block;
+	margin-top: 10px;
+	padding: 8px 16px;
+	background-color: white;
+	color: #121212;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 0.9rem;
+	border-radius: 5px;
+	transition: background-color 0.3s ease;
+}
+
+.read-more-btn:hover {
+	background-color: white;
+}
+
+.read-more-btn {
+	margin-bottom: 5px;
+	/* malo razmaka ispod */
+}
+
+.card-footer {
+	padding: 0 12px 20px;
+	/* isto kao h3 i p */
+}
+
+.top-news {
+	display: flex;
+	gap: 20px;
+	margin-bottom: 25px;
+}
+
+.featured-article {
+	flex: 1;
+	/* zauzima oko 50% */
+	display: flex;
+	flex-direction: column;
+}
+
+.side-cards {
+	flex: 1;
+	/* zauzima oko 50% */
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.side-cards {
+	flex: 1;
+	/* zauzima oko 50% */
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.side-cards .article-card img {
+	height: 160px;
+	/* malo niže od glavnih */
+	object-fit: cover;
+}
+
+.top-news {
+	display: flex;
+	gap: 20px;
+	margin-bottom: 25px;
+}
+
+.top-news .featured-article {
+	flex: 1;
+	/* oba zauzimaju jednaku širinu */
+	display: flex;
+	flex-direction: column;
+}
+
+.top-news .featured-article img {
+	height: 500px;
+	/* prilagođeno za dva velika pored */
+	object-fit: cover;
+}
+
+.top-news .featured-article {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	transition: transform 0.3s ease;
+	/* da animacija bude glatka */
+}
+
+.top-news .featured-article:hover {
+	transform: scale(1.02);
+	/* lagano povećanje na hover */
+}
+
+/* NBA About Sections CSS */
+:root {
+	--bg-main: #121212;
+	--bg-alt: #1e1e1e;
+	--text: #ffffff;
+	--accent: #ffffff;
+	--max-w: 1600px;
+	/* Increased to make it wider */
+}
+
+.nba-about-sections {
+	max-width: var(--max-w);
+	margin: 0 auto;
+	padding: 40px 20px;
+}
+
+.nba-about-section {
+	border-radius: 12px;
+	padding: 24px;
+	margin-bottom: 22px;
+}
+
+.nba-about-hdr {
+	margin-bottom: 14px;
+}
+
+.nba-about-hdr h3 {
+	margin: 0;
+	color: var(--accent);
+	font-size: 2.7rem;
+}
+
+.nba-about-row {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 24px;
+	align-items: center;
+}
+
+.nba-about-text {
+	color: var(--text);
+	line-height: 2;
+	font-size: 1.5rem;
+}
+
+/* Image gallery carousel styling */
+.nba-gallery {
+	position: relative;
+	width: 100%;
+	height: 500px;
+	/* fiksna visina galerije */
+	overflow: hidden;
+	border-radius: 8px;
+}
+
+.nba-gallery img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	/* pokrije cijeli prostor bez istezanja */
+	display: none;
+}
+
+.nba-gallery img.active {
+	display: block;
+}
+
+.nba-gallery .arrow {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background-color: rgba(0, 0, 0, 0.5);
+	color: var(--text);
+	border: none;
+	font-size: 1.5rem;
+	padding: 8px 12px;
+	cursor: pointer;
+	border-radius: 4px;
+}
+
+.nba-gallery .arrow.left {
+	left: 10px;
+}
+
+.nba-gallery .arrow.right {
+	right: 10px;
+}
+
+/* Footer full width */
+footer {
+	width: 100%;
+	background-color: var(--bg-alt);
+	color: var(--text);
+	padding: 20px;
+}
+
+@media (max-width: 900px) {
+	.nba-about-row {
+		grid-template-columns: 1fr;
+	}
+}
+
+.nba-link {
+	color: var(--accent);
+	text-decoration: none;
+	font-weight: 600;
+}
+
+h1 {
+	color: #ffffff;
+	/* Bijela boja */
+	text-align: center;
+	font-size: 2.8rem;
+	/* Povećan font za širi ekran */
+	margin-bottom: 25px;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+}
+
+.intro {
+	width: 98%;
+	/* Povećana širina za širi izgled */
+	max-width: none;
+	/* Uklonjeno ograničenje */
+	line-height: 1.6;
+	margin: 0 auto 30px;
+	color: #b0b0b0;
+	font-size: 1.2rem;
+	/* Povećan font */
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+	width: 98%;
+	/* Povećano na 98% za širi izgled */
+	margin: 0 auto;
+	/* Centrirano s malim marginama */
+}
+
+/* Slideshow placeholder */
+.slideshow-placeholder {
+	background: #1e1e1e;
+	padding: 25px;
+	text-align: center;
+	border-radius: 12px;
+	font-size: 1.3rem;
+	/* Povećan font */
+	color: #b0b0b0;
+	margin-bottom: 35px;
+	/* Povećan razmak ispod slideshowa */
+}
+
+/* Tabs navigacija */
+.tabs {
+	display: flex;
+	gap: 20px;
+	justify-content: center;
+	margin-bottom: 25px;
+	margin-top: 25px;
+	/* Spušteno zbog slideshowa */
+}
+
+.tab-button {
+	padding: 14px 35px;
+	/* Povećan padding za širi izgled */
+	border: none;
+	background: #2a2a2a;
+	color: #e0e0e0;
+	cursor: pointer;
+	border-radius: 10px;
+	font-weight: 600;
+	font-size: 1.2rem;
+	/* Povećan font */
+	transition: background 0.3s ease, transform 0.2s ease;
+	font-family: "Bebas Neue", sans-serif;
+}
+
+.tab-button.active {
+	background: #ffffff;
+	/* Bijela boja */
+	color: #121212;
+	/* Tamna boja teksta za kontrast */
+	transform: translateY(-2px);
+}
+
+.tab-content {
+	display: none;
+}
+
+.tab-content.active {
+	display: block;
+}
+
+.main-content {
+	display: flex;
+	gap: 50px;
+	/* Povećan razmak za širi izgled */
+	flex-wrap: wrap;
+}
+
+.players,
+.my-team {
+	flex: 1;
+	background: #1e1e1e;
+	padding: 30px;
+	/* Povećan padding */
+	border-radius: 14px;
+	min-width: 450px;
+	/* Povećana minimalna širina za širi ekran */
+	border: 1px solid #2a2a2a;
+}
+
+.players h2,
+.my-team h2 {
+	color: #ffffff;
+	/* Bijela boja */
+	font-size: 2.2rem;
+	/* Povećan font */
+	margin-bottom: 25px;
+}
+
+.scroll-table {
+	max-height: 550px;
+	/* Povećana visina za više prostora */
+	overflow-y: auto;
+	scrollbar-width: none;
+	/* Firefox */
+}
+
+.scroll-table::-webkit-scrollbar {
+	display: none;
+	/* Chrome, Safari, Edge */
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 1.1rem;
+	/* Povećan font */
+}
+
+th,
+td {
+	padding: 14px;
+	/* Povećan padding */
+	text-align: left;
+}
+
+th {
+	background: #2a2a2a;
+	color: #e0e0e0;
+	font-weight: 600;
+}
+
+tr:nth-child(even) {
+	background: #181818;
+}
+
+button {
+	padding: 10px 20px;
+	/* Povećan padding za širi izgled */
+	border: none;
+	cursor: pointer;
+	background: #ffffff;
+	/* Bijela boja */
+	color: #121212;
+	border-radius: 8px;
+	font-weight: 600;
+	font-size: 1.1rem;
+	/* Povećan font */
+}
+
+button.remove-btn {
+	background: #e63946;
+	color: white;
+}
+
+button:disabled {
+	background: #4a4a4a;
+	cursor: not-allowed;
+}
+
+.my-team {
+	background: #1e1e1e;
+	padding: 30px;
+	/* Povećan padding */
+	border-radius: 14px;
+	min-width: 450px;
+	/* Povećana minimalna širina */
+	box-shadow: none;
+}
+
+.team-grid {
+	display: flex;
+	/* Flex za poredak u jednom redu */
+	flex-wrap: nowrap;
+	/* Sprječava prelazak u više redova */
+	gap: 10px;
+	/* Smanjen razmak za stavljanje svih 5 kartica */
+	margin-top: 25px;
+	justify-content: space-between;
+	/* Ravnomjerno raspoređuje kartice */
+}
+
+.team-card {
+	background: #252525;
+	border-radius: 14px;
+	padding: 20px 15px;
+	/* Smanjen padding za manje kartice */
+	text-align: center;
+	position: relative;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+	transition: transform 0.25s ease;
+	cursor: default;
+	flex: 1;
+	/* Kartice se ravnomjerno šire */
+	min-width: 120px;
+	/* Smanjena minimalna širina */
+	max-width: 180px;
+	/* Smanjena maksimalna širina */
+}
+
+/* Očuvani hover efekti */
+.team-card:hover {
+	transform: translateY(-6px);
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.9);
+}
+
+.team-card img {
+	width: 80px;
+	/* Smanjena slika za manje kartice */
+	height: 80px;
+	border-radius: 50%;
+	margin-bottom: 15px;
+	border: 3px solid #ffffff;
+	/* Bijela boja */
+	object-fit: cover;
+	box-shadow: none;
+}
+
+.team-card strong {
+	display: block;
+	font-size: 1.1rem;
+	/* Smanjen font za manje kartice */
+	margin-bottom: 8px;
+	color: #e0e0e0;
+	letter-spacing: 0.02em;
+	text-shadow: none;
+}
+
+.team-card p {
+	font-size: 0.9rem;
+	/* Smanjen font za manje kartice */
+	margin: 4px 0;
+	color: #b0b0b0;
+	text-shadow: none;
+}
+
+.team-card p.pos {
+	font-weight: 600;
+	color: #888;
+}
+
+.team-card p.price,
+.team-card p.fp {
+	font-weight: 500;
+	color: #b0b0b0;
+}
+
+.remove-btn {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background: #e63946;
+	border: none;
+	padding: 6px 10px;
+	/* Smanjen padding za manje kartice */
+	border-radius: 6px;
+	font-size: 0.9rem;
+	/* Smanjen font */
+	font-weight: 700;
+	color: white;
+	cursor: pointer;
+	box-shadow: none;
+	transition: background 0.3s ease;
+}
+
+/* Očuvani hover efekt */
+.remove-btn:hover {
+	background: #ab2932;
+	box-shadow: none;
+}
+
+.scroll-table {
+	max-height: 550px;
+	/* Povećana visina */
+	overflow-y: auto;
+	scrollbar-width: none;
+}
+
+.scroll-table::-webkit-scrollbar {
+	display: none;
+}
+
+.sticky-header th {
+	position: sticky;
+	top: 0;
+	background: #2a2a2a;
+	z-index: 10;
+	border-bottom: 1px solid #444;
+}
+
+#save-team-section {
+	margin-top: 30px;
+	/* Povećan razmak */
+}
+
+#save-team-section input {
+	padding: 14px;
+	/* Povećan padding */
+	margin-right: 20px;
+	border-radius: 8px;
+	border: 1px solid #ffffff;
+	/* Bijela boja */
+	background: #252525;
+	color: #e0e0e0;
+	font-size: 1.1rem;
+	/* Povećan font */
+	width: 300px;
+	/* Povećana širina input polja */
+}
+
+#save-team-section button {
+	background: #ffffff;
+	/* Bijela boja */
+	color: #121212;
+	/* Tamna boja teksta za kontrast */
+	padding: 10px 20px;
+	/* Povećan padding */
+}
+
+/* Poboljšana sekcija Saved Teams slična My Team */
+#saved-teams-tab {
+	background: #1e1e1e;
+	padding: 40px;
+	/* Povećan padding za prostraniji izgled */
+	border-radius: 16px;
+	/* Zaobljeniji rubovi */
+	border: 1px solid #2a2a2a;
+	width: 98%;
+	/* Povećana širina za širi izgled */
+	margin: 0 auto;
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+	/* Suptilna sjena za dubinu */
+}
+
+#saved-teams-tab h2 {
+	color: #ffffff;
+	/* Bijela boja */
+	font-size: 2.4rem;
+	/* Povećan font za naslov */
+	margin-bottom: 30px;
+	text-align: center;
+	/* Centriran naslov */
+	font-weight: 700;
+	letter-spacing: 1px;
+}
+
+.saved-team {
+	background: #252525;
+	padding: 30px;
+	/* Povećan padding */
+	border-radius: 14px;
+	margin-bottom: 30px;
+	border: 1px solid #2a2a2a;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+	/* Sjena za karticu tima */
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	/* Glatki prijelaz */
+}
+
+.saved-team:hover {
+	transform: translateY(-4px);
+	/* Suptilni hover efekt */
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.saved-team h4 {
+	color: #ffffff;
+	/* Bijela boja */
+	font-size: 1.8rem;
+	/* Povećan font */
+	margin-bottom: 20px;
+	font-weight: 600;
+	text-align: left;
+	/* Poravnanje lijevo za moderniji izgled */
+	letter-spacing: 0.5px;
+}
+
+.saved-team p {
+	color: #b0b0b0;
+	margin: 15px 0;
+	/* Povećan razmak */
+	font-size: 1.2rem;
+	/* Povećan font za čitljivost */
+	font-weight: 500;
+}
+
+.saved-team-grid {
+	display: flex;
+	/* Flex za poredak u jednom redu, slično .team-grid */
+	flex-wrap: nowrap;
+	/* Sprječava prelazak u više redova */
+	gap: 10px;
+	/* Smanjen razmak za stavljanje svih 5 kartica */
+	margin-top: 20px;
+	justify-content: space-between;
+	/* Ravnomjerno raspoređuje kartice */
+}
+
+.saved-team-grid .team-card {
+	background: #2a2a2a;
+	/* Tamnija pozadina za razliku od My Team */
+	border-radius: 14px;
+	padding: 20px 15px;
+	/* Smanjen padding za manje kartice */
+	text-align: center;
+	position: relative;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+	transition: transform 0.25s ease;
+	cursor: default;
+	flex: 1;
+	/* Kartice se ravnomjerno šire */
+	min-width: 120px;
+	/* Smanjena minimalna širina */
+	max-width: 180px;
+	/* Smanjena maksimalna širina */
+}
+
+.saved-team-grid .team-card:hover {
+	transform: translateY(-6px);
+	/* Hover efekt sličan My Team */
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.9);
+}
+
+.saved-team-grid .team-card img {
+	width: 80px;
+	/* Smanjena slika za manje kartice */
+	height: 80px;
+	border-radius: 50%;
+	margin-bottom: 15px;
+	border: 3px solid #ffffff;
+	/* Bijela boja */
+	object-fit: cover;
+	box-shadow: none;
+}
+
+.saved-team-grid .team-card strong {
+	display: block;
+	font-size: 1.1rem;
+	/* Smanjen font za manje kartice */
+	margin-bottom: 8px;
+	color: #e0e0e0;
+	letter-spacing: 0.02em;
+	text-shadow: none;
+}
+
+.saved-team-grid .team-card p {
+	font-size: 0.9rem;
+	/* Smanjen font za manje kartice */
+	margin: 4px 0;
+	color: #b0b0b0;
+	text-shadow: none;
+}
+
+.saved-team-grid .team-card p.pos {
+	font-weight: 600;
+	color: #888;
+}
+
+.saved-team-grid .team-card p.price,
+.saved-team-grid .team-card p.fp {
+	font-weight: 500;
+	color: #b0b0b0;
+}
+
+.delete-team-btn {
+	background: #e63946;
+	color: white;
+	padding: 12px 24px;
+	/* Povećan padding za moderniji izgled */
+	border-radius: 10px;
+	/* Zaobljeniji rubovi */
+	margin-top: 25px;
+	font-weight: 600;
+	font-size: 1.2rem;
+	/* Povećan font */
+	border: none;
+	cursor: pointer;
+	transition: background 0.3s ease, transform 0.2s ease;
+	/* Glatki prijelaz */
+	display: block;
+	/* Centriranje gumba */
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Poboljšani hover efekt za gumb */
+.delete-team-btn:hover {
+	background: #ab2932;
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+#no-saved-teams {
+	color: #b0b0b0;
+	font-size: 1.4rem;
+	/* Povećan font za poruku */
+	text-align: center;
+	margin-top: 40px;
+	/* Povećan razmak */
+	font-style: italic;
+	/* Kurziv za estetski dojam */
+	padding: 20px;
+	background: #252525;
+	/* Pozadina za poruku */
+	border-radius: 10px;
+	border: 1px solid #2a2a2a;
+}
+
+/* ===== League Pass Main ===== */
+.league-pass-main {
+	padding: 40px 20px;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+/* Hero sekcija */
+.league-pass-hero {
+	text-align: center;
+	margin-bottom: 60px;
+}
+
+.league-pass-hero h1 {
+	font-size: 3rem;
+	margin-bottom: 15px;
+	color: #ffcc00;
+}
+
+.league-pass-hero p {
+	font-size: 1.2rem;
+	color: #ddd;
+}
+
+/* Subscription Options */
+.subscription-options {
+	text-align: center;
+}
+
+.subscription-options h2 {
+	font-size: 3rem;
+	margin-bottom: 40px;
+	color: #fff;
+	letter-spacing: 2px;
+}
+
+/* Cards container */
+.cards-container {
+	display: flex;
+	gap: 25px;
+	justify-content: center;
+	align-items: stretch;
+	flex-wrap: wrap;
+	/* ostaje wrap za male ekrane */
+}
+
+.subscription-card {
+	background: #1e1e1e;
+	border-radius: 16px;
+	padding: 50px 30px;
+	border: 2px solid #ffcc00;
+	flex: 1;
+	min-width: 280px;
+	max-width: 350px;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	/* centriran tekst */
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.subscription-card:hover {
+	transform: scale(1.07);
+	/* povećanje na hover */
+	box-shadow: 0 0 30px rgba(255, 204, 0, 0.75);
+	/* žuti glow */
+}
+
+.subscription-card h3 {
+	font-size: 1.6rem;
+	margin-bottom: 15px;
+	color: #ffcc00;
+}
+
+.subscription-card .price {
+	font-size: 1.3rem;
+	font-weight: bold;
+	margin-bottom: 20px;
+	color: #fff;
+}
+
+.subscription-card ul {
+	margin-bottom: 25px;
+	color: #bbb;
+	padding: 0;
+	list-style: none;
+	text-align: center;
+	/* centrirane stavke */
+}
+
+.subscription-card ul li {
+	margin: 8px 0;
+	font-size: 0.95rem;
+}
+
+/* Dugme */
+.subscribe-btn {
+	background: #ffcc00;
+	color: #121212;
+	border: none;
+	border-radius: 10px;
+	padding: 12px 18px;
+	font-size: 1rem;
+	font-weight: bold;
+	cursor: pointer;
+	margin-top: auto;
+	/* guranje na dno kartice */
+	width: 100%;
+	/* dugme iste širine */
+	transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.subscribe-btn:hover {
+	background: #e6b800;
+	transform: translateY(-2px);
+	/* mali "lift" efekt */
+	box-shadow: 0 4px 12px rgba(255, 204, 0, 0.4);
+}
+
+.subscribe-btn:active {
+	transform: translateY(0);
+	/* pritisnuto */
+	box-shadow: none;
+}
+
+/* FAQ Section */
+.faq-section {
+	margin-top: 80px;
+	padding: 50px 20px;
+	background: #121212;
+	/* tamnija pozadina */
+	border-radius: 12px;
+	/* manji rubovi od kartica */
+}
+
+.faq-section h2 {
+	text-align: center;
+	font-size: 2rem;
+	margin-bottom: 30px;
+	color: #ffcc00;
+	letter-spacing: 2px;
+}
+
+/* FAQ item */
+.faq-item {
+	margin-bottom: 15px;
+	border: 1px solid #444;
+	/* svjetlija od kartica */
+	border-radius: 10px;
+	overflow: hidden;
+	background: #1a1a1a;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+	transition: transform 0.2s ease;
+}
+
+.faq-item:hover {
+	transform: translateY(-2px);
+}
+
+.faq-question {
+	width: 100%;
+	background: #1a1a1a;
+	color: #ffcc00;
+	padding: 15px 20px;
+	font-size: 1rem;
+	text-align: left;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	transition: background 0.3s ease;
+}
+
+.faq-question:hover {
+	background: #222;
+}
+
+/* Plus/minus znak */
+.faq-question::after {
+	content: "+";
+	font-size: 1.2rem;
+	transition: transform 0.3s ease;
+}
+
+/* Kada je otvoreno */
+.faq-item.active .faq-question::after {
+	content: "−";
+	transform: rotate(180deg);
+}
+
+/* Odgovor */
+.faq-answer {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.3s ease, padding 0.3s ease;
+	background: #121212;
+	padding: 0 20px;
+	text-align: left;
+}
+
+.faq-answer p {
+	color: #bbb;
+	margin: 15px 0;
+	line-height: 1.5;
+}
+
+/* Modal overlay */
+.modal {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7);
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+}
+
+/* Modal content */
+.modal-content {
+	background: #1e1e1e;
+	padding: 40px 50px;
+	/* veći padding */
+	border-radius: 16px;
+	/* malo zaobljenije */
+	text-align: center;
+	color: #fff;
+	width: 400px;
+	/* veća širina */
+	max-width: 90%;
+	/* prilagodba za manje ekrane */
+	position: relative;
+}
+
+/* Form labels */
+.modal-content label {
+	display: block;
+	margin: 20px 0;
+	/* više razmaka između polja */
+	text-align: left;
+}
+
+/* Input polja */
+.modal-content input {
+	width: 100%;
+	padding: 12px;
+	/* veći inputi */
+	margin-top: 8px;
+	border-radius: 8px;
+	border: 1px solid #ccc;
+	font-size: 1rem;
+}
+
+/* Dugme */
+.modal-content button {
+	margin-top: 25px;
+	padding: 12px 25px;
+	/* veće dugme */
+	border: none;
+	background: #ffcc00;
+	color: #121212;
+	border-radius: 8px;
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 1rem;
+	transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.modal-content button:hover {
+	background: #e6b800;
+	transform: translateY(-2px);
+}
+
+/* Close icon */
+.close {
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	font-size: 1.5rem;
+	cursor: pointer;
+	color: #ffcc00;
+	transition: color 0.3s ease;
+}
+
+.close:hover {
+	color: #e6b800;
+}
+
+.cancel-btn {
+	background: #e63946;
+	/* crvena boja */
+	color: #fff;
+	border: none;
+	border-radius: 10px;
+	padding: 12px 18px;
+	font-size: 1rem;
+	font-weight: bold;
+	cursor: pointer;
+	margin-top: 10px;
+	/* mali razmak od Subscribe dugmeta */
+	width: 100%;
+	/* dugme iste širine */
+	transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cancel-btn:hover {
+	background: #c1121f;
+	/* tamnija crvena na hover */
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.cancel-btn:active {
+	transform: scale(0.97);
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Popup styles */
+.popup {
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.5);
+	justify-content: center;
+	align-items: center;
+}
+
+.popup-content {
+	background-color: #1a1a1a;
+	/* Dark background to match cards */
+	padding: 30px;
+	border-radius: 10px;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+	text-align: center;
+	color: #ffffff;
+	width: 400px;
+	max-width: 90%;
+	position: relative;
+}
+
+.close-popup {
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	font-size: 2em;
+	color: #ffd700;
+	/* Yellow close button */
+	cursor: pointer;
+	transition: color 0.3s ease;
+}
+
+.close-popup:hover {
+	color: #c9082a;
+	/* Red on hover */
+}
+
+.popup h2,
+.popup h3 {
+	color: #ffd700;
+	/* Yellow headings */
+	margin-bottom: 20px;
+}
+
+.popup p {
+	font-size: 1.2em;
+	color: #dddddd;
+	/* Light gray text */
+	white-space: pre-line;
+	/* Preserve line breaks */
+}
+
+.confirmation-content {
+	border: 2px solid #ffd700;
+	/* Yellow border for confirmation */
+}
+
+/* Kontejner skoro pune širine ekrana */
+.schedule-container {
+	width: 100vw;
+	/* skoro full width */
+	max-width: 1800px;
+	/* opcionalna gornja granica */
+	margin: 24px auto;
+	padding: 20px;
+	background: #111;
+	border-radius: 16px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+	color: #fff;
+	font-family: Arial, sans-serif;
+}
+
+/* Input */
+.schedule-container input {
+	width: 98.5%;
+	padding: 12px 14px;
+	margin-bottom: 16px;
+	border-radius: 10px;
+	border: none;
+	outline: none;
+	font-size: 16px;
+	background: #1a1a1a;
+	color: #eee;
+}
+
+/* Skrolabilni kontejner za utakmice */
+#schedule {
+	max-height: 360px;
+	/* visina za ~5 utakmica */
+	overflow-y: auto;
+	/* omogućava vertikalno skrolanje */
+	scrollbar-width: none;
+	/* potpuno sakriva skrolbar za Firefox */
+}
+
+/* Potpuno sakriva skrolbar za WebKit preglednike (Chrome, Safari) */
+#schedule::-webkit-scrollbar {
+	display: none;
+}
+
+/* Red (kartica) utakmice */
+.schedule-game {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	/* razmak između datuma, matchup-a i arene */
+	padding: 16px 20px;
+	margin-bottom: 12px;
+	background: #1a1a1a;
+	border-radius: 12px;
+	transition: transform 0.2s ease, background 0.3s ease;
+}
+
+/* Hover efekat */
+.schedule-game:hover {
+	transform: translateY(-2px);
+	background: #202020;
+}
+
+/* Datum – fiksna širina da se lijepo poravna */
+.schedule-game .date {
+	flex: 0 0 160px;
+	/* širina kolone za datum */
+	font-weight: 700;
+	color: #e0e0e0;
+	letter-spacing: 0.2px;
+}
+
+/* Sekcija “away @ home” */
+.schedule-game .matchup {
+	display: flex;
+	align-items: center;
+	flex: 1 1 auto;
+	/* zauzima sredinu */
+	min-width: 300px;
+	font-size: 16px;
+	position: relative;
+	/* za centriranje @ */
+}
+
+/* Timovi */
+.schedule-game .team {
+	display: flex;
+	flex-direction: row;
+	/* horizontalno poravnanje */
+	align-items: center;
+	gap: 15px;
+	/* razmak između loga i imena tima */
+	white-space: nowrap;
+	/* da imena ne pucaju */
+	flex: 0 1 auto;
+	/* sprječava preveliko rastezanje */
+}
+
+/* Gostujući tim – poravnanje lijevo */
+.schedule-game .away-team {
+	justify-content: flex-start;
+	min-width: 250px;
+	/* širina za gostujući tim */
+}
+
+/* Domaći tim – poravnanje lijevo, pomjeren desno */
+.schedule-game .home-team {
+	justify-content: flex-start;
+	/* lijevo poravnanje unutar tima */
+	min-width: 250px;
+	/* širina za domaći tim */
+	margin-left: 200px;
+	/* razmak desno od @ */
+}
+
+/* Logo */
+.schedule-game img {
+	height: 40px;
+	/* povećana veličina loga */
+	width: 40px;
+	object-fit: contain;
+}
+
+/* Znak @ */
+.schedule-game .at-symbol {
+	font-size: 18px;
+	/* veći @ za vidljivost */
+	font-weight: 600;
+	color: #fff;
+	/* bijela boja */
+	flex: 0 0 50px;
+	/* fiksna širina za @ */
+	text-align: center;
+	position: absolute;
+	/* apsolutno pozicioniranje za centriranje */
+	left: 50%;
+	/* centriranje u odnosu na .matchup */
+	transform: translateX(-50%);
+	/* pomjera @ točno na sredinu */
+}
+
+/* Arena – desno, može da prelomi u 2 reda ako zatreba */
+.schedule-game .arena {
+	flex: 0 1 420px;
+	/* desna kolona */
+	text-align: right;
+	font-size: 14px;
+	color: #bbb;
+	line-height: 1.25;
+	word-break: keep-all;
+}
+
+
+@media (max-width: 768px) {
+
+	/* Global Reset & Fixes */
+	* {
+		box-sizing: border-box;
+	}
+
+	html,
+	body {
+		margin: 0;
+		padding: 0;
+		overflow-x: hidden;
+		/* Sprječava horizontalni scroll */
+		max-width: 100%;
+		font-family: 'Bebas Neue', sans-serif;
+		/* Zadržan font */
+	}
+
+	body {
+		font-size: 0.9rem;
+		transition: all 0.3s ease;
+		overflow-x: hidden;
+		margin: 0;
+		padding: 0;
+	}
+
+	/* Fixed Header */
+	.header-container {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		flex-direction: row;
+		justify-content: space-between;
+		/* Raspored: hamburger lijevo, logo centar, auth-links desno */
+		align-items: center;
+		padding: 0 15px;
+		gap: 10px;
+		height: 70px;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+		background: #121212;
+		z-index: 10000;
+	}
+
+	/* Osiguraj da sav sadržaj krene ispod headera */
+	main,
+	section,
+	.hero,
+	.cta-banner,
+	.cta-banner2 {
+		margin-top: 60px;
+	}
+
+	.logo-container {
+		flex-shrink: 0;
+		flex-grow: 1;
+		/* Centrira logo */
+		text-align: center;
+	}
+
+	.logo {
+		max-height: 50px;
+		transition: transform 0.3s ease;
+	}
+
+	.logo:hover {
+		transform: scale(1.05);
+	}
+
+	/* Hamburger menu */
+	.hamburger {
+		display: block;
+		cursor: pointer;
+		flex-shrink: 0;
+		order: -1;
+		/* Postavlja hamburger kao prvi element (lijevo) */
+		margin-left: 0;
+		margin-right: 10px;
+		/* Razmak između hamburgera i loga */
+	}
+
+	.hamburger:hover {
+		transform: scale(1.1);
+	}
+
+	.hamburger div {
+		width: 25px;
+		height: 3px;
+		background: white;
+		margin: 5px 0;
+		transition: 0.3s;
+		border-radius: 2px;
+	}
+
+	/* Hamburger animacija u X oblik */
+	.hamburger.active div:nth-child(1) {
+		transform: rotate(45deg) translate(5px, 5px);
+	}
+
+	.hamburger.active div:nth-child(2) {
+		opacity: 0;
+	}
+
+	.hamburger.active div:nth-child(3) {
+		transform: rotate(-45deg) translate(7px, -7px);
+	}
+
+	#main-nav {
+		display: none;
+		flex-direction: column;
+		gap: 10px;
+		position: absolute;
+		top: 60px;
+		left: 0;
+		width: 100%;
+		background: #121212;
+		padding: 15px 0;
+		z-index: 9998;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+		transition: transform 0.3s ease, opacity 0.3s ease;
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+
+	#main-nav.active {
+		display: flex;
+		transform: translateY(0);
+		opacity: 1;
+	}
+
+	.navigation {
+		font-size: 1.1rem;
+		padding: 10px 15px;
+		text-align: center;
+		transition: background-color 0.3s ease, color 0.3s ease;
+	}
+
+	.navigation:hover {
+		background-color: #1e1e1e;
+		color: #ffcc00;
+	}
+
+	/* Sakrij auth-link unutar main-nav jer su već u headeru */
+	#main-nav .auth-link {
+		display: none;
+		/* Uklanja League Pass i Profile/Sign In iz hamburger menija */
+	}
+
+	.auth-links {
+		display: flex;
+		gap: 8px;
+		/* Smanjen razmak između dugmadi */
+		flex-shrink: 0;
+		align-items: center;
+		margin-left: auto;
+		/* Postavlja auth-links desno */
+	}
+
+	.auth-link {
+		font-size: 0.8rem;
+		/* Manja veličina fonta za oba dugmeta */
+		height: 32px;
+		/* Smanjena visina dugmadi */
+		padding: 0 8px;
+		/* Smanjen padding za kompaktniji izgled */
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: background-color 0.3s ease, transform 0.2s ease;
+		border-radius: 4px;
+	}
+
+	/* League Pass - žuto dugme */
+	.league-pass {
+		background-color: #ffcc00;
+		color: #121212;
+		border: none;
+		width: 90px;
+		/* Fiksna širina za League Pass */
+	}
+
+	.league-pass:hover {
+		background-color: #e6b800;
+		color: #000;
+	}
+
+	/* Sign In/Profile - bijelo dugme */
+	.sign-in,
+	.profile {
+		background-color: #ffffff;
+		color: #121212;
+		border: none;
+		width: auto;
+		/* Prilagođava širinu sadržaju */
+		min-width: 100px;
+		/* Minimalna širina za sprečavanje preuzanog izgleda */
+		max-width: 110px;
+		/* Maksimalna širina za kontrolu */
+		padding: 0 8px;
+		/* Prilagođeni padding */
+		display: flex;
+		align-items: center;
+		gap: 6px;
+		/* Razmak između slike i teksta */
+	}
+
+	.sign-in:hover,
+	.profile:hover {
+		background-color: #e6e6e6;
+		color: #000;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	}
+
+	.profile-pic {
+		width: 24px;
+		/* Manja profilna slika */
+		height: 24px;
+		border-radius: 50%;
+		object-fit: cover;
+		flex-shrink: 0;
+	}
+
+	.username {
+		font-family: 'Bebas Neue', sans-serif;
+		font-size: 0.9rem;
+		/* Manji font za username */
+		font-weight: bold;
+		color: #121212;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+		max-width: 100px;
+		/* Ograničava širinu username-a */
+	}
+
+	/* Hero Section */
+	.hero {
+		height: 70vh;
+		max-height: 600px;
+		margin-top: 60px;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		/* tekst lijevo */
+		background-size: cover;
+		background-position: center;
+		padding: 0;
+	}
+
+	.hero-overlay {
+		width: 100%;
+		max-width: 700px;
+		padding: 25px 20px;
+		background: rgba(0, 0, 0, 0.65);
+		border-radius: 0 0 0px 0px;
+		text-align: left;
+	}
+
+	.hero-overlay h2 {
+		font-size: 2rem;
+		margin-bottom: 15px;
+	}
+
+	.hero-overlay p {
+		font-size: 1rem;
+		margin-bottom: 20px;
+	}
+
+	.cta-button {
+		max-width: 250px;
+		width: 100%;
+		padding: 10px;
+		font-size: 1.1rem;
+		border-radius: 8px;
+		text-align: center;
+		display: inline-block;
+	}
+
+	/* CTA Banners */
+	.cta-banner,
+	.cta-banner2 {
+		height: 60vh;
+		min-height: 300px;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		/* tekst lijevo */
+		background-size: cover;
+		background-position: center;
+		padding: 0 20px;
+	}
+
+	.cta-overlay,
+	.cta-overlay2 {
+		max-width: 700px;
+		/* Vraćen originalni max-width */
+		padding: 25px 20px;
+		/* Vraćen originalni padding */
+		background: rgba(0, 0, 0, 0.65);
+		border-radius: 0 0 15px 15px;
+		text-align: left;
+	}
+
+	.cta-overlay h2,
+	.cta-overlay2 h2 {
+		font-size: 2rem;
+		margin-bottom: 15px;
+	}
+
+	.cta-overlay p,
+	.cta-overlay2 p {
+		font-size: 1rem;
+		margin-bottom: 20px;
+	}
+
+	.cta-button2 {
+		max-width: 250px;
+		width: 100%;
+		padding: 10px;
+		font-size: 1.1rem;
+		border-radius: 8px;
+		text-align: center;
+		display: inline-block;
+	}
+
+	/* Footer */
+	.footer {
+		padding: 20px 10px;
+		text-align: center;
+		background: #121212;
+		box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
+	}
+
+	.footer-links {
+		display: flex;
+		justify-content: center;
+		gap: 15px;
+		flex-wrap: wrap;
+		margin-bottom: 15px;
+	}
+
+	.footer-links a {
+		font-size: 0.95rem;
+		transition: color 0.3s ease;
+	}
+
+	.footer-links a:hover {
+		color: #ffcc00;
+	}
+
+	.footer-bottom {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 10px;
+		align-items: center;
+		justify-items: center;
+		text-align: center;
+	}
+
+	.bottom-left,
+	.logo-footer,
+	.social-media {
+		margin: 5px 0;
+	}
+
+	.social-icons {
+		display: flex;
+		justify-content: center;
+		gap: 10px;
+	}
+
+	.social-icons a {
+		transition: transform 0.3s ease;
+	}
+
+	.social-icons a:hover {
+		transform: scale(1.1);
+	}
+
+	/* Tables adjustments (Players Section) */
+	.table-container {
+		max-width: 100%;
+		overflow-x: auto;
+		padding: 0;
+		margin: 0;
+	}
+
+	.nba-table {
+		width: 100%;
+		max-width: 100%;
+		border-spacing: 0;
+		table-layout: auto;
+		font-size: 0.85rem;
+		/* Slightly larger font for readability */
+	}
+
+	.nba-table th,
+	.nba-table td {
+		padding: 8px 6px;
+		/* Increased padding for better spacing */
+		font-size: 0.8rem;
+		/* Slightly larger font */
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		text-align: center;
+	}
+
+	/* Allow player names to wrap and be fully visible */
+	.nba-table th:nth-child(2),
+	.nba-table td:nth-child(2) {
+		/* Assuming first column is player name */
+		white-space: normal;
+		/* Allow wrapping */
+		max-width: 150px;
+		/* Wider for names */
+		text-overflow: clip;
+		/* Prevent ellipsis */
+		min-width: 100px;
+		/* Ensure enough space for names */
+	}
+
+	.nba-table tbody tr:hover {
+		background-color: #2a2a2a;
+		transition: background-color 0.3s ease;
+	}
+
+	.player-img {
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		box-shadow: 0 0 4px rgba(255, 255, 255, 0.1);
+	}
+
+	.team-logo {
+		width: 20px;
+		height: 20px;
+		border-radius: 4px;
+	}
+
+	/* Schedule Container */
+	.schedule-container {
+		padding: 10px;
+		max-width: 100%;
+		border-radius: 15px;
+		overflow-x: hidden;
+	}
+
+	.schedule-container input {
+		width: 100%;
+		border-radius: 10px;
+		padding: 10px;
+		font-size: 0.9rem;
+	}
+
+	.schedule-game {
+		flex-direction: column;
+		align-items: center;
+		gap: 8px;
+		border-radius: 12px;
+		padding: 8px;
+		/* Smanjen padding za kompaktniji izgled */
+		transition: background 0.3s ease;
+		max-width: 100%;
+		background: #1e1e1e;
+		margin-bottom: 10px;
+	}
+
+	.schedule-game:hover {
+		background: #202020;
+	}
+
+	.schedule-game .date {
+		flex-basis: auto;
+		font-size: 0.85rem;
+		/* Smanjen font za datum */
+		text-align: center;
+	}
+
+	.schedule-game .matchup {
+		flex-direction: row;
+		align-items: center;
+		gap: 6px;
+		/* Smanjen razmak između elemenata */
+		width: 100%;
+		justify-content: center;
+	}
+
+	.schedule-game .away-team,
+	.schedule-game .home-team {
+		min-width: auto;
+		flex: 1;
+		text-align: center;
+		font-size: 0.8rem;
+		/* Smanjen font za kraća imena */
+		max-width: 80px;
+		/* Smanjena širina zbog kraćih imena */
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+
+	.schedule-game .home-team {
+		margin-left: 10px;
+	}
+
+	.schedule-game .at-symbol {
+		position: static;
+		transform: none;
+		flex: 0 0 auto;
+		font-size: 0.85rem;
+		/* Smanjen font za @ */
+		min-width: 18px;
+		/* Smanjena minimalna širina */
+	}
+
+	.schedule-game .arena {
+		text-align: center;
+		flex-basis: auto;
+		font-size: 0.8rem;
+		/* Smanjen font za arenu */
+	}
+
+	.schedule-game img {
+		height: 24px;
+		/* Smanjene slike za kompaktniji izgled */
+		width: 24px;
+	}
+
+	#schedule {
+		max-height: 300px;
+		max-width: 100%;
+		overflow-x: hidden;
+	}
+
+	/* News Section */
+	.news-section {
+		padding: 40px 10px;
+		max-width: 100%;
+	}
+
+	.section-title {
+		font-size: 2rem;
+		margin-bottom: 30px;
+		padding-left: 0;
+		text-align: center;
+	}
+
+	.news-grid {
+		flex-direction: column;
+		gap: 20px;
+		padding: 0;
+		max-width: 100%;
+	}
+
+	.news-card {
+		width: 100%;
+		border-radius: 12px;
+		overflow: hidden;
+		transition: transform 0.3s ease;
+	}
+
+	.news-card:hover {
+		transform: translateY(-5px);
+	}
+
+	.news-card img {
+		height: 200px;
+		object-fit: cover;
+		width: 100%;
+	}
+
+	/* Featured Section */
+	.featured-section {
+		padding: 40px 10px;
+		max-width: 100%;
+	}
+
+	.section-title2 {
+		font-size: 2rem;
+		margin-bottom: 30px;
+		padding-left: 0;
+		text-align: center;
+	}
+
+	.players-grid2 {
+		grid-template-columns: 1fr;
+		gap: 20px;
+		max-width: 100%;
+	}
+
+	.player-card2 {
+		min-width: auto;
+		border-radius: 12px;
+		transition: transform 0.3s ease;
+	}
+
+	.player-card2:hover {
+		transform: translateY(-5px);
+	}
+
+	.player-card2 img {
+		height: 300px;
+		object-fit: cover;
+		width: 100%;
+	}
+
+	.player-info2 {
+		min-width: auto;
+		text-align: left;
+		align-items: left;
+		padding: 15px;
+	}
+
+	.profile-btn {
+		align-self: left;
+		border-radius: 8px;
+		transition: background-color 0.3s ease;
+	}
+
+	/* Schedule Section */
+	.schedule-section {
+		padding: 40px 10px;
+		max-width: 100%;
+	}
+
+	.schedule-section h2 {
+		font-size: 2.2rem;
+		margin-bottom: 30px;
+	}
+
+	.schedule-cards {
+		flex-direction: column;
+		gap: 20px;
+		max-width: 100%;
+	}
+
+	.schedule-card {
+		width: 100%;
+		padding: 20px;
+		border-radius: 15px;
+		transition: transform 0.3s ease;
+	}
+
+	.schedule-card:hover {
+		transform: scale(1.02);
+	}
+
+	.team-logo {
+		height: 40px;
+		width: 40px;
+	}
+
+	.team-name {
+		font-size: 1rem;
+	}
+
+	.vs {
+		font-size: 1.1rem;
+	}
+
+	.game-details {
+		font-size: 0.9rem;
+	}
+
+	/* Images at bottom before footer */
+	.cta-background3 {
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+		border-radius: 10px;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+	}
+
+	.nba_knowledge_image {
+		padding: 10px 20px;
+		/* Zadržan povećan bočni padding */
+		background: #1e1e1e;
+		border-radius: 15px;
+		transition: transform 0.3s ease;
+	}
+
+	.nba_knowledge_image:hover {
+		transform: scale(1.02);
+	}
+
+	/* Players header and search input */
+	.players-header {
+		margin-bottom: 30px;
+		max-width: 100%;
+	}
+
+	.players-title {
+		font-size: 2rem;
+		margin: 30px 0 15px;
+	}
+
+	#searchInput {
+		width: 100%;
+		padding: 12px 20px 12px 40px;
+		background-position: 10px center;
+		border-radius: 10px;
+		transition: box-shadow 0.3s ease;
+	}
+
+	#searchInput:focus {
+		box-shadow: 0 0 8px rgba(255, 204, 0, 0.5);
+	}
+
+	/* Teams Section */
+	.teams {
+		font-size: 3rem;
+		margin: 60px 0 30px;
+		max-width: 100%;
+	}
+
+	.conferences-container {
+		flex-direction: column;
+		gap: 15px;
+		padding: 10px;
+		max-width: 100%;
+	}
+
+	.conference-card {
+		min-width: auto;
+		border-radius: 12px;
+		padding: 15px;
+	}
+
+	.conf-title {
+		font-size: 2.5rem;
+		margin-bottom: 15px;
+		border-radius: 8px;
+	}
+
+	.divisions-wrapper {
+		flex-direction: column;
+		gap: 15px;
+		max-width: 100%;
+	}
+
+	.division {
+		min-width: auto;
+		padding: 12px;
+		border-radius: 10px;
+	}
+
+	.division h3 {
+		font-size: 1.5rem;
+	}
+
+	.division ul li {
+		font-size: 1.1rem;
+		transition: background-color 0.3s ease;
+	}
+
+	.division ul li:hover {
+		background-color: #2a2a2a;
+		border-radius: 5px;
+	}
+
+	.division ul li img {
+		width: 40px;
+		height: 40px;
+	}
+
+	/* Schedule Carousel */
+	.schedule-carousel {
+		padding: 60px 10px;
+		font-size: 1.5rem;
+		max-width: 100%;
+	}
+
+	.scheduleTitle {
+		font-size: 2.5rem;
+		padding: 15px 10px;
+	}
+
+	.carousel-container {
+		padding: 10px;
+		max-width: 100%;
+	}
+
+	.carousel-track {
+		gap: 15px;
+		max-width: 100%;
+	}
+
+	.game {
+		flex: 0 0 100%;
+		min-height: auto;
+		border-radius: 15px;
+		transition: transform 0.3s ease;
+	}
+
+	.game:hover {
+		transform: scale(1.02);
+	}
+
+	.matchup {
+		gap: 30px;
+		flex-wrap: nowrap;
+		max-width: 100%;
+	}
+
+	.team-logoCard {
+		width: 50px;
+		height: 50px;
+	}
+
+	.team-name {
+		font-size: 1.3rem;
+	}
+
+	.vs {
+		font-size: 1.2rem;
+	}
+
+	.arrow {
+		font-size: 2rem;
+		width: 50px;
+		height: 60px;
+		border-radius: 50%;
+		background: #333;
+		opacity: 0.8;
+		transition: opacity 0.3s ease;
+	}
+
+	.arrow:hover {
+		opacity: 1;
+	}
+
+	.arrow.left {
+		left: 10px;
+	}
+
+	.arrow.right {
+		right: 10px;
+	}
+
+	/* Leaders Section */
+	.leaders-section {
+		padding: 40px 10px;
+		gap: 60px;
+		max-width: 100%;
+	}
+
+	.leaders-wrapper {
+		padding: 30px;
+		border-radius: 15px;
+		max-width: 100%;
+	}
+
+	.leaders-header h2 {
+		font-size: 2.8rem;
+	}
+
+	.toggle-button {
+		padding: 8px 15px;
+		font-size: 1rem;
+		border-radius: 8px;
+		transition: background-color 0.3s ease;
+	}
+
+	.leaders-grid {
+		grid-template-columns: 1fr;
+		gap: 15px;
+		max-width: 100%;
+	}
+
+	.leader-box {
+		border-radius: 12px;
+		transition: transform 0.3s ease, background-color 0.3s ease;
+	}
+
+	.leader-box:hover {
+		transform: scale(1.02);
+		background-color: #333;
+	}
+
+	.leader-box h3 {
+		font-size: 2rem;
+	}
+
+	.leader-box p {
+		font-size: 1.1rem;
+		gap: 10px;
+	}
+
+	.mugshot,
+	.mugshot2 {
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+	}
+
+	/* NBA Knowledge */
+	.nba_knowledge {
+		padding: 30px 10px;
+		max-width: 100%;
+	}
+
+	/* Articles Section */
+	.articles-section {
+		padding: 30px 10px;
+		max-width: 100%;
+	}
+
+	.top-news {
+		flex-direction: column;
+		gap: 15px;
+		max-width: 100%;
+	}
+
+	.featured-article img {
+		height: 300px;
+		border-radius: 12px 12px 0 0;
+		width: 100%;
+	}
+
+	.side-cards .article-card img {
+		height: 140px;
+		width: 100%;
+	}
+
+	.article-cards {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 10px;
+		max-width: 100%;
+	}
+
+	.article-card img {
+		height: 150px;
+		border-radius: 10px 10px 0 0;
+		width: 100%;
+	}
+
+	.article-card {
+		transition: transform 0.3s ease;
+	}
+
+	.article-card:hover {
+		transform: translateY(-5px);
+	}
+
+	/* NBA About Sections */
+	.nba-about-sections {
+		padding: 30px 10px;
+		max-width: 100%;
+	}
+
+	.nba-about-hdr h3 {
+		font-size: 2.2rem;
+	}
+
+	.nba-about-text {
+		font-size: 1.3rem;
+		line-height: 1.8;
+	}
+
+	.nba-gallery {
+		height: 300px;
+		border-radius: 12px;
+		overflow: hidden;
+		width: 100%;
+	}
+
+	.nba-gallery img {
+		transition: opacity 0.5s ease;
+		width: 100%;
+	}
+
+	/* Fantasy Draft */
+	h1 {
+		font-size: 2.2rem;
+		margin-bottom: 20px;
+	}
+
+	.intro {
+		width: 100%;
+		font-size: 1rem;
+	}
+
+	.container {
+		width: 100%;
+		gap: 20px;
+		max-width: 100%;
+	}
+
+	.slideshow-placeholder {
+		padding: 20px;
+		font-size: 1.1rem;
+		margin-bottom: 25px;
+		border-radius: 12px;
+		max-width: 100%;
+	}
+
+	.tabs {
+		gap: 10px;
+		flex-wrap: wrap;
+		max-width: 100%;
+	}
+
+	.tab-button {
+		padding: 10px 20px;
+		font-size: 1rem;
+		border-radius: 8px;
+		transition: background 0.3s ease;
+	}
+
+	.main-content {
+		flex-direction: column;
+		gap: 30px;
+		max-width: 100%;
+	}
+
+	.players,
+	.my-team {
+		min-width: auto;
+		padding: 20px;
+		border-radius: 12px;
+		max-width: 100%;
+	}
+
+	.players h2,
+	.my-team h2 {
+		font-size: 1.8rem;
+		margin-bottom: 20px;
+	}
+
+	.scroll-table {
+		max-height: 400px;
+		max-width: 100%;
+		overflow-x: auto;
+	}
+
+	.table th,
+	.table td {
+		padding: 10px;
+		font-size: 0.95rem;
+		max-width: 100px;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+
+	.team-grid {
+		flex-wrap: wrap;
+		gap: 15px;
+		justify-content: center;
+		max-width: 100%;
+	}
+
+	.team-card {
+		min-width: 140px;
+		max-width: none;
+		flex: 0 1 calc(50% - 15px);
+		border-radius: 12px;
+		transition: transform 0.3s ease;
+	}
+
+	.team-card:hover {
+		transform: translateY(-5px);
+	}
+
+	.team-card img {
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+	}
+
+	.team-card strong {
+		font-size: 1rem;
+	}
+
+	.team-card p {
+		font-size: 0.8rem;
+	}
+
+	.remove-btn {
+		padding: 5px 8px;
+		font-size: 0.8rem;
+		border-radius: 6px;
+		transition: background 0.3s ease;
+	}
+
+	#save-team-section input {
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 10px;
+		border-radius: 8px;
+	}
+
+	#saved-teams-tab {
+		padding: 30px;
+		width: 100%;
+		border-radius: 12px;
+	}
+
+	#saved-teams-tab h2 {
+		font-size: 2rem;
+	}
+
+	.saved-team {
+		padding: 20px;
+		margin-bottom: 20px;
+		border-radius: 12px;
+		transition: transform 0.3s ease;
+	}
+
+	.saved-team:hover {
+		transform: translateY(-5px);
+	}
+
+	.saved-team h4 {
+		font-size: 1.5rem;
+	}
+
+	.saved-team p {
+		font-size: 1rem;
+	}
+
+	.saved-team-grid {
+		flex-wrap: wrap;
+		gap: 15px;
+		justify-content: center;
+		max-width: 100%;
+	}
+
+	.saved-team-grid .team-card {
+		min-width: 140px;
+		max-width: none;
+		flex: 0 1 calc(50% - 15px);
+	}
+
+	.delete-team-btn {
+		padding: 10px 20px;
+		font-size: 1rem;
+		border-radius: 8px;
+		transition: background 0.3s ease, transform 0.2s ease;
+	}
+
+	.delete-team-btn:hover {
+		transform: scale(1.02);
+	}
+
+	#no-saved-teams {
+		font-size: 1.2rem;
+		margin-top: 30px;
+		padding: 15px;
+		border-radius: 10px;
+	}
+
+	/* League Pass */
+	.league-pass-main {
+		padding: 30px 10px;
+		max-width: 100%;
+	}
+
+	.league-pass-hero h1 {
+		font-size: 2.5rem;
+	}
+
+	.league-pass-hero p {
+		font-size: 1rem;
+	}
+
+	.subscription-options h2 {
+		font-size: 2.5rem;
+	}
+
+	.cards-container {
+		flex-direction: column;
+		gap: 20px;
+		max-width: 100%;
+	}
+
+	.subscription-card {
+		max-width: none;
+		padding: 40px 20px;
+		border-radius: 15px;
+		transition: transform 0.3s ease;
+	}
+
+	.subscription-card:hover {
+		transform: scale(1.05);
+	}
+
+	.faq-section {
+		margin-top: 60px;
+		padding: 40px 10px;
+		border-radius: 15px;
+		max-width: 100%;
+	}
+
+	.faq-section h2 {
+		font-size: 1.8rem;
+	}
+
+	.faq-question {
+		padding: 12px 15px;
+		font-size: 0.95rem;
+		border-radius: 10px;
+		transition: background 0.3s ease;
+	}
+
+	.modal-content {
+		padding: 30px;
+		width: 90%;
+		border-radius: 15px;
+	}
+
+	.modal-content input {
+		padding: 10px;
+		border-radius: 8px;
+	}
+
+	.modal-content button {
+		padding: 10px 20px;
+		border-radius: 8px;
+		transition: background 0.3s ease;
+	}
+
+	.popup-content {
+		padding: 20px;
+		width: 90%;
+		border-radius: 15px;
+	}
+
+	.popup h2,
+	.popup h3 {
+		font-size: 1.8rem;
+	}
+
+	.popup p {
+		font-size: 1rem;
+	}
+
+	/* Related Content */
+	.related-content {
+		margin-top: 20px;
+		padding-left: 0;
+		max-width: 100%;
+	}
+
+	.related-content strong {
+		font-size: 1.3rem;
+		margin-bottom: 10px;
+	}
+
+	.related-content li {
+		font-size: 0.95rem;
+		margin-bottom: 10px;
+		transition: color 0.3s ease;
+	}
+
+	.related-content a:hover {
+		color: #ffcc00;
+	}
+
+	.slideshow-dots {
+		left: 15px;
+		bottom: 15px;
+	}
+
+	.dot {
+		height: 10px;
+		width: 10px;
+		margin: 0 5px;
+	}
+}
+
+
+/* Popup stilovi (desktop) */
+.popup-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.7);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+}
+
+.popup-content {
+	background: #222;
+	padding: 20px;
+	border-radius: 10px;
+	max-width: 600px;
+	width: 90%;
+	max-height: 80vh;
+	/* Ograničava visinu popup-a */
+	overflow-y: auto;
+	/* Omogućuje skrolanje unutar popup-a */
+	color: #eee;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	text-align: left;
+	position: relative;
+	/* Za pozicioniranje X gumba */
+	box-sizing: border-box;
+}
+
+.popup-content h3 {
+	font-size: 1.5rem;
+	margin: 0 0 15px;
+	text-align: center;
+	font-family: 'Bebas Neue', cursive;
+	color: #eee;
+}
+
+.popup-content #popup-text {
+	font-size: 0.95rem;
+	line-height: 1.5;
+	margin-bottom: 20px;
+}
+
+.close-x {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 1.2rem;
+	color: #eee;
+	cursor: pointer;
+	transition: color 0.3s ease;
+}
+
+.close-x:hover {
+	color: #ffcc00;
+	/* Žuta boja za hover efekt */
+}
+
+/* Mobilni prikaz (≤ 768px) */
+@media only screen and (max-width: 768px) {
+	.popup-overlay {
+		padding: 10px !important;
+	}
+
+	.popup-content {
+		width: 95% !important;
+		max-width: 340px !important;
+		padding: 15px !important;
+		max-height: 85vh !important;
+		/* Malo veća visina za mobitel */
+		overflow-y: auto !important;
+		/* Osigurava skrolanje */
+		border-radius: 8px !important;
+	}
+
+	.popup-content h3 {
+		font-size: 1.3rem !important;
+		margin: 0 0 10px !important;
+	}
+
+	.popup-content #popup-text {
+		font-size: 0.85rem !important;
+		line-height: 1.4 !important;
+	}
+
+	.close-x {
+		top: 8px !important;
+		right: 8px !important;
+		font-size: 1rem !important;
+	}
+}

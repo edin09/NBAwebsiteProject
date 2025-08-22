@@ -1,0 +1,387 @@
+[
+  {
+    "date": "2025-10-21",
+    "home": "OKC",
+    "homeLogo": "/icons/team/thunder.png",
+    "away": "HOU",
+    "awayLogo": "/icons/team/rockets.png",
+    "arena": "Paycom Center, Oklahoma City"
+  },
+  {
+    "date": "2025-10-21",
+    "home": "LAL",
+    "homeLogo": "/icons/team/lakers.png",
+    "away": "GSW",
+    "awayLogo": "/icons/tema_logo/warriors.svg",
+    "arena": "Crypto.com Arena, Los Angeles"
+  },
+  {
+    "date": "2025-10-22",
+    "home": "CHA",
+    "homeLogo": "/icons/team/hornets.png",
+    "away": "BKN",
+    "awayLogo": "/icons/team/nets.png",
+    "arena": "Spectrum Center, Charlotte"
+  },
+  {
+    "date": "2025-10-22",
+    "home": "NYK",
+    "homeLogo": "/icons/team/knicks.png",
+    "away": "CLE",
+    "awayLogo": "/icons/team/cavs.png",
+    "arena": "Madison Square Garden (IV), New York"
+  },
+  {
+    "date": "2025-10-22",
+    "home": "ORL",
+    "homeLogo": "/icons/team/magic.png",
+    "away": "MIA",
+    "awayLogo": "/icons/team/miami.png",
+    "arena": "Kia Center, Orlando"
+  },
+  {
+    "date": "2025-10-22",
+    "home": "BOS",
+    "homeLogo": "/icons/team/celtics.png",
+    "away": "PHI",
+    "awayLogo": "/icons/team/philly.png",
+    "arena": "TD Garden, Boston"
+  },
+  {
+    "date": "2025-10-22",
+    "home": "ATL",
+    "homeLogo": "/icons/team/hawks.png",
+    "away": "TOR",
+    "awayLogo": "/icons/team/raptors.png",
+    "arena": "State Farm Arena, Atlanta"
+  },
+  {
+    "date": "2025-10-22",
+    "home": "CHI",
+    "homeLogo": "/icons/team/bulls.png",
+    "away": "DET",
+    "awayLogo": "/icons/team/pistons.png",
+    "arena": "United Center, Chicago"
+  },
+  {
+    "date": "2025-10-22",
+    "home": "MEM",
+    "homeLogo": "/icons/team/grizzlies.png",
+    "away": "NOP",
+    "awayLogo": "/icons/team/pelicans.png",
+    "arena": "FedExForum, Memphis"
+  },
+  {
+    "date": "2025-10-22",
+    "home": "MIL",
+    "homeLogo": "/icons/team/bucks.png",
+    "away": "WAS",
+    "awayLogo": "/icons/team/wizards.png",
+    "arena": "Fiserv Forum, Milwaukee"
+  },
+  {
+    "date": "2025-10-22",
+    "home": "UTA",
+    "homeLogo": "/icons/tema_logo/jazz.svg",
+    "away": "LAC",
+    "awayLogo": "/icons/team/clippers.png",
+    "arena": "Delta Center, Salt Lake City"
+  },
+  {
+    "date": "2025-10-22",
+    "home": "DAL",
+    "homeLogo": "/icons/team/mavericks.png",
+    "away": "SAS",
+    "awayLogo": "/icons/team/spurs.png",
+    "arena": "American Airlines Center, Dallas"
+  },
+  {
+    "date": "2025-10-22",
+    "home": "POR",
+    "homeLogo": "/icons/team/blazers.webp",
+    "away": "MIN",
+    "awayLogo": "/icons/team/timberwolves.png",
+    "arena": "Moda Center, Portland"
+  },
+  {
+    "date": "2025-10-22",
+    "home": "PHX",
+    "homeLogo": "/icons/team/suns.png",
+    "away": "SAC",
+    "awayLogo": "/icons/team/kings.png",
+    "arena": "PHX Arena, Phoenix"
+  },
+  {
+    "date": "2025-10-23",
+    "home": "IND",
+    "homeLogo": "/icons/team/pacers.gif",
+    "away": "OKC",
+    "awayLogo": "/icons/team/thunder.png",
+    "arena": "Gainbridge Fieldhouse, Indianapolis"
+  },
+  {
+    "date": "2025-10-23",
+    "home": "GSW",
+    "homeLogo": "/icons/tema_logo/warriors.svg",
+    "away": "DEN",
+    "awayLogo": "/icons/team/denver.png",
+    "arena": "Chase Center, San Francisco"
+  },
+  {
+    "date": "2025-10-24",
+    "home": "ORL",
+    "homeLogo": "/icons/team/magic.png",
+    "away": "ATL",
+    "awayLogo": "/icons/team/hawks.png",
+    "arena": "Kia Center, Orlando"
+  },
+  {
+    "date": "2025-10-24",
+    "home": "BKN",
+    "homeLogo": "/icons/team/nets.png",
+    "away": "CLE",
+    "awayLogo": "/icons/team/cavs.png",
+    "arena": "Barclays Center, Brooklyn"
+  },
+  {
+    "date": "2025-10-24",
+    "home": "TOR",
+    "homeLogo": "/icons/team/raptors.png",
+    "away": "MIL",
+    "awayLogo": "/icons/team/bucks.png",
+    "arena": "Scotiabank Arena, Toronto"
+  },
+  {
+    "date": "2025-10-24",
+    "home": "NYK",
+    "homeLogo": "/icons/team/knicks.png",
+    "away": "BOS",
+    "awayLogo": "/icons/team/celtics.png",
+    "arena": "Madison Square Garden (IV), New York"
+  },
+  {
+    "date": "2025-10-24",
+    "home": "HOU",
+    "homeLogo": "/icons/team/rockets.png",
+    "away": "DET",
+    "awayLogo": "/icons/team/pistons.png",
+    "arena": "Toyota Center, Houston"
+  },
+  {
+    "date": "2025-10-24",
+    "home": "NOP",
+    "homeLogo": "/icons/team/pelicans.png",
+    "away": "SAS",
+    "awayLogo": "/icons/team/spurs.png",
+    "arena": "Smoothie King Center, New Orleans"
+  },
+  {
+    "date": "2025-10-24",
+    "home": "MEM",
+    "homeLogo": "/icons/team/grizzlies.png",
+    "away": "MIA",
+    "awayLogo": "/icons/team/miami.png",
+    "arena": "FedExForum, Memphis"
+  },
+  {
+    "date": "2025-10-24",
+    "home": "DAL",
+    "homeLogo": "/icons/team/mavericks.png",
+    "away": "WAS",
+    "awayLogo": "/icons/team/wizards.png",
+    "arena": "American Airlines Center, Dallas"
+  },
+  {
+    "date": "2025-10-24",
+    "home": "LAL",
+    "homeLogo": "/icons/team/lakers.png",
+    "away": "MIN",
+    "awayLogo": "/icons/team/timberwolves.png",
+    "arena": "Crypto.com Arena, Los Angeles"
+  },
+  {
+    "date": "2025-10-24",
+    "home": "POR",
+    "homeLogo": "/icons/team/blazers.webp",
+    "away": "GSW",
+    "awayLogo": "/icons/tema_logo/warriors.svg",
+    "arena": "Moda Center, Portland"
+  },
+  {
+    "date": "2025-10-25",
+    "home": "ORL",
+    "homeLogo": "/icons/team/magic.png",
+    "away": "CHI",
+    "awayLogo": "/icons/team/bulls.png",
+    "arena": "Kia Center, Orlando"
+  },
+  {
+    "date": "2025-10-25",
+    "home": "ATL",
+    "homeLogo": "/icons/team/hawks.png",
+    "away": "OKC",
+    "awayLogo": "/icons/team/thunder.png",
+    "arena": "State Farm Arena, Atlanta"
+  },
+  {
+    "date": "2025-10-25",
+    "home": "PHI",
+    "homeLogo": "/icons/team/philly.png",
+    "away": "CHA",
+    "awayLogo": "/icons/team/hornets.png",
+    "arena": "Xfinity Mobile Arena, Philadelphia"
+  },
+  {
+    "date": "2025-10-25",
+    "home": "MEM",
+    "homeLogo": "/icons/team/grizzlies.png",
+    "away": "IND",
+    "awayLogo": "/icons/team/pacers.gif",
+    "arena": "FedExForum, Memphis"
+  },
+  {
+    "date": "2025-10-25",
+    "home": "DEN",
+    "homeLogo": "/icons/team/denver.png",
+    "away": "PHX",
+    "awayLogo": "/icons/team/suns.png",
+    "arena": "Ball Arena, Denver"
+  },
+  {
+    "date": "2025-10-26",
+    "home": "SAS",
+    "homeLogo": "/icons/team/spurs.png",
+    "away": "BKN",
+    "awayLogo": "/icons/team/nets.png",
+    "arena": "Frost Bank Center, San Antonio"
+  },
+  {
+    "date": "2025-10-26",
+    "home": "DET",
+    "homeLogo": "/icons/team/pistons.png",
+    "away": "BOS",
+    "awayLogo": "/icons/team/celtics.png",
+    "arena": "Little Caesars Arena, Detroit"
+  },
+  {
+    "date": "2025-10-26",
+    "home": "WAS",
+    "homeLogo": "/icons/team/wizards.png",
+    "away": "CHA",
+    "awayLogo": "/icons/team/hornets.png",
+    "arena": "Capital One Arena, Washington"
+  },
+  {
+    "date": "2025-10-26",
+    "home": "MIA",
+    "homeLogo": "/icons/team/miami.png",
+    "away": "NYK",
+    "awayLogo": "/icons/team/knicks.png",
+    "arena": "Kaseya Center, Miami"
+  },
+  {
+    "date": "2025-10-26",
+    "home": "CLE",
+    "homeLogo": "/icons/team/cavs.png",
+    "away": "MIL",
+    "awayLogo": "/icons/team/bucks.png",
+    "arena": "Rocket Arena, Cleveland"
+  },
+  {
+    "date": "2025-10-26",
+    "home": "MIN",
+    "homeLogo": "/icons/team/timberwolves.png",
+    "away": "IND",
+    "awayLogo": "/icons/team/pacers.gif",
+    "arena": "Target Center, Minneapolis"
+  },
+  {
+    "date": "2025-10-26",
+    "home": "DAL",
+    "homeLogo": "/icons/team/mavericks.png",
+    "away": "TOR",
+    "awayLogo": "/icons/team/raptors.png",
+    "arena": "American Airlines Center, Dallas"
+  },
+  {
+    "date": "2025-10-26",
+    "home": "SAC",
+    "homeLogo": "/icons/tema_logo/kings.svg",
+    "away": "LAL",
+    "awayLogo": "/icons/team/lakers.png",
+    "arena": "Golden 1 Center, Sacramento"
+  },
+  {
+    "date": "2025-10-26",
+    "home": "LAC",
+    "homeLogo": "/icons/team/clippers.png",
+    "away": "POR",
+    "awayLogo": "/icons/team/blazers.webp",
+    "arena": "Intuit Dome, Los Angeles"
+  },
+  {
+    "date": "2025-10-30",
+    "home": "CHA",
+    "homeLogo": "/icons/team/hornets.png",
+    "away": "ORL",
+    "awayLogo": "/icons/team/magic.png",
+    "arena": "Spectrum Center, Charlotte"
+  },
+  {
+    "date": "2025-10-30",
+    "home": "MIL",
+    "homeLogo": "/icons/team/bucks.png",
+    "away": "GSW",
+    "awayLogo": "/icons/tema_logo/warriors.svg",
+    "arena": "Fiserv Forum, Milwaukee"
+  },
+  {
+    "date": "2025-10-30",
+    "home": "OKC",
+    "homeLogo": "/icons/team/thunder.png",
+    "away": "WSH",
+    "awayLogo": "/icons/team/wizards.png",
+    "arena": "Paycom Center, Oklahoma City"
+  },
+  {
+    "date": "2025-10-30",
+    "home": "SAS",
+    "homeLogo": "/icons/team/spurs.png",
+    "away": "MIA",
+    "awayLogo": "/icons/team/miami.png",
+    "arena": "Frost Bank Center, San Antonio"
+  },
+  {
+    "date": "2025-10-31",
+    "home": "IND",
+    "homeLogo": "/icons/team/pacers.gif",
+    "away": "ATL",
+    "awayLogo": "/icons/team/hawks.png",
+    "arena": "Gainbridge Fieldhouse, Indianapolis"
+  },
+  {
+    "date": "2025-10-31",
+    "home": "PHI",
+    "homeLogo": "/icons/team/philly.png",
+    "away": "BOS",
+    "awayLogo": "/icons/team/celtics.png",
+    "arena": "Xfinity Mobile Arena, Philadelphia"
+  },
+  {
+    "date": "2025-10-31",
+    "home": "CLE",
+    "homeLogo": "/icons/team/cavs.png",
+    "away": "TOR",
+    "awayLogo": "/icons/team/raptors.png",
+    "arena": "Rocket Arena, Cleveland"
+  },
+  {
+    "date": "2025-10-31",
+    "home": "CHI",
+    "homeLogo": "/icons/team/bulls.png",
+    "away": "NYK",
+    "awayLogo": "/icons/team/knicks.png",
+    "arena": "United Center, Chicago"
+  }
+]
+

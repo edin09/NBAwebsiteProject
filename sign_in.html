@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Sign Up / Login</title>
+      <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+      <link rel="icon" type="image/png" href="icons/NBA.png">
+      <meta property="og:title" content="NBA Sign Up / Login">
+      <meta property="og:description" content="Join the NBA community! Sign up or log in to follow your favorite teams and players.">
+      <meta property="og:image" content="trivia_pics/nba.avif">
+      <meta property="og:image:alt" content="NBA Sign Up and Login Page">
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="https://tvoja-stranica.com">
+      <meta property="og:site_name" content="NBA Fan Platform">
+      <!-- Twitter/X specifični tagovi (opcionalno za bolji prikaz) -->
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:image" content="trivia_pics/nba.avif">
+      <meta name="description" content="Join the NBA Fan Platform! Sign up or log in to follow your favorite NBA teams and players.">
+      <style>
+         body, html {
+         height: 100vh;
+         margin: 0;
+         padding: 0;
+         font-family: 'Bebas Neue', cursive, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+         color: #eee;
+         overflow: hidden;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         background: transparent;
+         }
+         .slideshow {
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100vw;
+         height: 100vh;
+         background-size: cover;
+         background-repeat: no-repeat;
+         background-position: center center;
+         z-index: -1;
+         filter: brightness(0.6);
+         }
+         .login-container {
+         background: rgba(34, 34, 34, 0.85);
+         padding: 40px 35px;
+         border-radius: 12px;
+         box-shadow: 0 0 15px rgba(255, 255, 255, 0.12);
+         width: 350px;
+         text-align: center;
+         position: relative;
+         z-index: 1;
+         max-height: 90vh;
+         }
+         h2 {
+         margin-bottom: 25px;
+         font-size: 3rem;
+         font-weight: 600;
+         color: #eee;
+         letter-spacing: 3px;
+         }
+         input, select {
+         width: 100%;
+         padding: 10px;
+         margin: 8px 0;
+         border: 1px solid #444;
+         border-radius: 8px;
+         background: #222;
+         color: #eee;
+         outline: none;
+         transition: border-color 0.3s ease;
+         font-size: 1rem;
+         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+         display: block;
+         box-sizing: border-box;
+         }
+         input:focus, select:focus {
+         border-color: white;
+         }
+         button {
+         background: white;
+         border: none;
+         padding: 15px 0;
+         font-size: 1.3rem;
+         font-weight: bold;
+         border-radius: 15px;
+         cursor: pointer;
+         color: black;
+         margin-top: 20px;
+         transition: transform 0.2s ease, box-shadow 0.3s ease;
+         width: 100%;
+         font-family: 'Bebas Neue', cursive;
+         letter-spacing: 1px;
+         }
+         button:hover {
+         transform: translateY(-2px);
+         }
+         .toggle-link {
+         margin-top: 20px;
+         color: #bbb;
+         cursor: pointer;
+         text-decoration: underline;
+         font-size: 0.95rem;
+         user-select: none;
+         transition: color 0.3s ease;
+         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+         }
+         .toggle-link:hover {
+         color: #eee;
+         }
+         .error {
+         margin-top: 15px;
+         font-size: 0.9rem;
+         min-height: 20px;
+         color: #e53935;
+         user-select: none;
+         }
+         #team-logo, #player-photo {
+         display: none;
+         margin-top: 10px;
+         width: 60px;
+         height: 60px;
+         border-radius: 8px;
+         box-shadow: 0 0 8px rgba(255, 255, 255, 0.15);
+         object-fit: contain;
+         margin-left: auto;
+         margin-right: auto;
+         }
+         .back-home {
+         margin-top: 15px;
+         color: #bbb;
+         cursor: pointer;
+         font-size: 0.9rem;
+         user-select: none;
+         text-decoration: underline;
+         display: inline-block;
+         }
+         .back-home:hover {
+         color: #eee;
+         }
+         .title-row {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         gap: 10px;
+         }
+         .nba-logo {
+         width: 80px;
+         height: auto;
+         }
+         @media (max-width: 768px) {
+         body {
+         font-size: 0.9rem;
+         }
+         .login-container {
+         width: 97%;       /* malo širi nego prije */
+         max-width: 420px; /* umjesto 380px, širi container */
+         padding: 25px;
+         }
+         .login-container h2 {
+         font-size: 2rem;
+         }
+         .login-container input,
+         .login-container button {
+         font-size: 1rem;
+         padding: 14px;
+         }
+         }
+      </style>
+   </head>
+   <body>
+      <div class="slideshow"></div>
+      <div class="login-container">
+         <div class="title-row">
+            <img src="icons/nba_logo.svg" alt="NBA Logo" class="nba-logo" />
+            <h2 id="form-title">id</h2>
+         </div>
+         <input type="text" id="username" placeholder="Username" autocomplete="off" />
+         <input type="password" id="password" placeholder="Password" autocomplete="off" />
+         <select id="favoriteTeam">
+            <option value="" disabled selected>Select team</option>
+            <option value="Los Angeles Lakers" data-logo="https://cdn.nba.com/teams/uploads/sites/1610612747/2021/12/lakers_70x70.svg">Los Angeles Lakers</option>
+            <option value="Golden State Warriors" data-logo="https://cdn.nba.com/logos/nba/1610612744/global/L/logo.svg">Golden State Warriors</option>
+            <option value="Brooklyn Nets" data-logo="https://cdn.nba.com/teams/uploads/sites/1610612751/2024/07/BKN_Primary.svg">Brooklyn Nets</option>
+            <option value="Chicago Bulls" data-logo="https://cdn.nba.com/teams/uploads/sites/1610612741/2021/10/bulls-svg.svg">Chicago Bulls</option>
+            <option value="Miami Heat" data-logo="https://cdn.nba.com/teams/uploads/sites/1610612748/2025/04/core.svg">Miami Heat</option>
+            <option value="Atlanta Hawks" data-logo="https://cdn.nba.com/teams/uploads/sites/1610612737/2023/01/atl_hawks_primary_icon.svg">Atlanta Hawks</option>
+            <option value="Boston Celtics" data-logo="https://cdn.nba.com/logos/nba/1610612738/global/L/logo.svg">Boston Celtics</option>
+            <option value="Charlotte Hornets" data-logo="https://cdn.nba.com/logos/nba/1610612766/global/L/logo.svg">Charlotte Hornets</option>
+            <option value="Cleveland Cavaliers" data-logo="https://cdn.nba.com/teams/uploads/sites/1610612739/2022/03/Asset-4-3.svg">Cleveland Cavaliers</option>
+            <option value="Dallas Mavericks" data-logo="https://cdn.nba.com/logos/nba/1610612742/global/L/logo.svg">Dallas Mavericks</option>
+            <option value="Denver Nuggets" data-logo="https://cdn.nba.com/logos/nba/1610612743/global/L/logo.svg">Denver Nuggets</option>
+            <option value="Detroit Pistons" data-logo="https://cdn.nba.com/teams/uploads/sites/1610612765/2021/09/dp-primary.svg">Detroit Pistons</option>
+            <option value="Houston Rockets" data-logo="https://cdn.nba.com/teams/uploads/sites/1610612745/2023/10/logo-6.46.56-PM.svg">Houston Rockets</option>
+            <option value="Indiana Pacers" data-logo="https://cdn.nba.com/logos/nba/1610612754/global/L/logo.svg">Indiana Pacers</option>
+            <option value="LA Clippers" data-logo="https://cdn.nba.com/teams/uploads/sites/1610612746/2024/06/LAClippers_Global_rgb.svg">LA Clippers</option>
+            <option value="Memphis Grizzlies" data-logo="https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/mem.png&h=200&w=200">Memphis Grizzlies</option>
+            <option value="Milwaukee Bucks" data-logo="https://cdn.nba.com/teams/uploads/sites/1610612749/2021/09/logo.svg">Milwaukee Bucks</option>
+            <option value="Minnesota Timberwolves" data-logo="https://cdn.nba.com/teams/uploads/sites/1610612750/2021/11/logo-1.svg">Minnesota Timberwolves</option>
+            <option value="New Orleans Pelicans" data-logo="https://cdn.nba.com/logos/nba/1610612740/global/L/logo.svg">New Orleans Pelicans</option>
+            <option value="New York Knicks" data-logo="https://cdn.nba.com/teams/uploads/sites/1610612752/2022/10/NYK2223-PRIMARY-LOGO.svg">New York Knicks</option>
+            <option value="Oklahoma City Thunder" data-logo="https://cdn.nba.com/teams/uploads/sites/1610612760/2021/12/logo.svg">Oklahoma City Thunder</option>
+            <option value="Orlando Magic" data-logo="https://cdn.nba.com/teams/uploads/sites/1610612753/2025/06/Orlando-Magic-Global-Logo.svg">Orlando Magic</option>
+            <option value="Philadelphia 76ers" data-logo="https://cdn.nba.com/logos/nba/1610612755/global/L/logo.svg">Philadelphia 76ers</option>
+            <option value="Phoenix Suns" data-logo="https://cdn.nba.com/teams/uploads/sites/1610612756/2022/08/suns-logo.svg">Phoenix Suns</option>
+            <option value="Portland Trail Blazers" data-logo="https://cdn.nba.com/teams/uploads/sites/1610612757/2022/03/tb_primary_rgb.svg">Portland Trail Blazers</option>
+            <option value="Sacramento Kings" data-logo="https://cdn.nba.com/teams/uploads/sites/1610612758/2022/04/Kings-Primary.svg">Sacramento Kings</option>
+            <option value="San Antonio Spurs" data-logo="https://cdn.nba.com/teams/uploads/sites/1610612759/2022/05/GlobalLogo_WHT-1.svg">San Antonio Spurs</option>
+            <option value="Toronto Raptors" data-logo="https://cdn.nba.com/teams/uploads/sites/1610612761/2021/09/Toronto-Raptors.svg">Toronto Raptors</option>
+            <option value="Utah Jazz" data-logo="https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/utah.png&h=200&w=200">Utah Jazz</option>
+            <option value="Washington Wizards" data-logo="https://cdn.nba.com/teams/uploads/sites/1610612764/2022/06/wiz-primary.svg">Washington Wizards</option>
+         </select>
+         <img id="team-logo" alt="Selected team logo" />
+         <select id="favoritePlayer">
+            <option value="" disabled selected>Select player</option>
+            <option value="LeBron James" data-info="Lakers, SF" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/2544.png">LeBron James</option>
+            <option value="Stephen Curry" data-info="Warriors, PG" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/201939.png">Stephen Curry</option>
+            <option value="Kevin Durant" data-info="Nets, PF" data-logo="https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3202.png&w=350&h=254">Kevin Durant</option>
+            <option value="Michael Jordan" data-info="Bulls, SG" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/893.png">Michael Jordan</option>
+            <option value="Dwyane Wade" data-info="Heat, SG" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/2548.png">Dwyane Wade</option>
+            <option value="Kobe Bryant" data-info="Lakers, SG" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/977.png">Kobe Bryant</option>
+            <option value="Magic Johnson" data-info="Lakers, PG" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/77142.png">Magic Johnson</option>
+            <option value="Larry Bird" data-info="Celtics, SF" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/1449.png">Larry Bird</option>
+            <option value="Kareem Abdul-Jabbar" data-info="Lakers, C" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/76003.png">Kareem Abdul-Jabbar</option>
+            <option value="Wilt Chamberlain" data-info="Lakers, C" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/76375.png">Wilt Chamberlain</option>
+            <option value="Bill Russell" data-info="Celtics, C" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/78049.png">Bill Russell</option>
+            <option value="Shaquille O'Neal" data-info="Lakers, C" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/406.png">Shaquille O'Neal</option>
+            <option value="Tim Duncan" data-info="Spurs, PF" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/1495.png">Tim Duncan</option>
+            <option value="Hakeem Olajuwon" data-info="Rockets, C" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/165.png">Hakeem Olajuwon</option>
+            <option value="Oscar Robertson" data-info="Royals, PG" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/600015.png">Oscar Robertson</option>
+            <option value="Jerry West" data-info="Lakers, PG" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/78497.png">Jerry West</option>
+            <option value="Elgin Baylor" data-info="Lakers, SF" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/76127.png">Elgin Baylor</option>
+            <option value="David Robinson" data-info="Spurs, C" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/764.png">David Robinson</option>
+            <option value="Karl Malone" data-info="Jazz, PF" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/252.png">Karl Malone</option>
+            <option value="John Stockton" data-info="Jazz, PG" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/304.png">John Stockton</option>
+            <option value="Charles Barkley" data-info="Suns, PF" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/787.png">Charles Barkley</option>
+            <option value="Patrick Ewing" data-info="Knicks, C" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/121.png">Patrick Ewing</option>
+            <option value="Dirk Nowitzki" data-info="Mavericks, PF" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/1717.png">Dirk Nowitzki</option>
+            <option value="Allen Iverson" data-info="76ers, SG" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/947.png">Allen Iverson</option>
+            <option value="Scottie Pippen" data-info="Bulls, SF" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/937.png">Scottie Pippen</option>
+            <option value="Isiah Thomas" data-info="Pistons, PG" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/78318.png">Isiah Thomas</option>
+            <option value="Dominique Wilkins" data-info="Hawks, SF" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/1122.png">Dominique Wilkins</option>
+            <option value="Clyde Drexler" data-info="Trail Blazers, SG" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/17.png">Clyde Drexler</option>
+            <option value="Julius Erving" data-info="76ers, SF" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/76681.png">Julius Erving</option>
+            <option value="Moses Malone" data-info="76ers, C" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/77449.png">Moses Malone</option>
+            <option value="Kevin Garnett" data-info="Timberwolves, PF" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/708.png">Kevin Garnett</option>
+            <option value="Paul Pierce" data-info="Celtics, SF" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/1718.png">Paul Pierce</option>
+            <option value="Ray Allen" data-info="Celtics, SG" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/951.png">Ray Allen</option>
+            <option value="Steve Nash" data-info="Suns, PG" data-logo="https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/592.png&w=350&h=254">Steve Nash</option>
+            <option value="Jason Kidd" data-info="Nets, PG" data-logo="https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/429.png&w=350&h=254">Jason Kidd</option>
+            <option value="Chris Paul" data-info="Suns, PG" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/101108.png">Chris Paul</option>
+            <option value="Russell Westbrook" data-info="Thunder, PG" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/201566.png">Russell Westbrook</option>
+            <option value="James Harden" data-info="Rockets, SG" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/201935.png">James Harden</option>
+            <option value="Gary Payton" data-info="Supersonics, PG" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/56.png">Gary Payton</option>
+            <option value="Dennis Rodman" data-info="Bulls, PF" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/23.png">Dennis Rodman</option>
+            <option value="Reggie Miller" data-info="Pacers, SG" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/397.png">Reggie Miller</option>
+            <option value="Vince Carter" data-info="Raptors, SG" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/1713.png">Vince Carter</option>
+            <option value="Tracy McGrady" data-info="Raptors, SG" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/1503.png">Tracy McGrady</option>
+            <option value="Bill Walton" data-info="Trail Blazers, C" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/78450.png">Bill Walton</option>
+         </select>
+         <img id="player-photo" alt="Selected player photo" />
+         <button onclick="submitForm()">Sign Up</button>
+         <div class="error" id="error-message"></div>
+         <div class="toggle-link" id="toggle-link">Already have an account? Log in</div>
+         <div class="back-home" onclick="goHome()">Back to Home</div>
+      </div>
+      <script>
+         const usernameInput = document.getElementById("username");
+         const passwordInput = document.getElementById("password");
+         const favoriteTeamSelect = document.getElementById("favoriteTeam");
+         const favoritePlayerSelect = document.getElementById("favoritePlayer");
+         const errorMessage = document.getElementById("error-message");
+         const teamLogo = document.getElementById("team-logo");
+         const playerPhoto = document.getElementById("player-photo");
+         const toggleLink = document.getElementById("toggle-link");
+         const formTitle = document.getElementById("form-title");
+         const submitBtn = document.querySelector("button");
+         const slideshow = document.querySelector(".slideshow");
+         
+         let isLoginMode = false;
+         
+         const images = [
+           "background/nba.jpg",
+           "background/nba2.jpg",
+           "background/nba3.jpeg",
+           "background/nba4.webp",
+           "background/nba6.jpeg"
+         ];
+         let currentImageIndex = 0;
+         
+         function changeBackground() {
+           slideshow.style.backgroundImage = `url('${images[currentImageIndex]}')`;
+           currentImageIndex = (currentImageIndex + 1) % images.length;
+         }
+         changeBackground();
+         setInterval(changeBackground, 8000);
+         
+         favoriteTeamSelect.addEventListener("change", () => {
+           const selectedOption = favoriteTeamSelect.options[favoriteTeamSelect.selectedIndex];
+           const logoUrl = selectedOption.getAttribute("data-logo");
+           if (logoUrl) {
+             teamLogo.src = logoUrl;
+             teamLogo.style.display = "block";
+           } else {
+             teamLogo.src = "";
+             teamLogo.style.display = "none";
+           }
+         });
+         
+         favoritePlayerSelect.addEventListener("change", () => {
+           const selectedOption = favoritePlayerSelect.options[favoritePlayerSelect.selectedIndex];
+           const photoUrl = selectedOption.getAttribute("data-logo"); // Promijenjeno s data-photo na data-logo
+           if (photoUrl) {
+             playerPhoto.src = photoUrl;
+             playerPhoto.style.display = "block";
+           } else {
+             playerPhoto.src = "";
+             playerPhoto.style.display = "none";
+           }
+         });
+         
+         toggleLink.addEventListener("click", () => {
+           isLoginMode = !isLoginMode;
+           errorMessage.textContent = "";
+           if (isLoginMode) {
+             formTitle.textContent = "Login";
+             submitBtn.textContent = "Log In";
+             toggleLink.textContent = "Don't have an account? Sign Up";
+             favoriteTeamSelect.style.display = "none";
+             favoritePlayerSelect.style.display = "none";
+             teamLogo.style.display = "none";
+             playerPhoto.style.display = "none";
+           } else {
+             formTitle.textContent = "Sign Up";
+             submitBtn.textContent = "Sign Up";
+             toggleLink.textContent = "Already have an account? Log in";
+             favoriteTeamSelect.style.display = "block";
+             favoritePlayerSelect.style.display = "block";
+           }
+         });
+         
+         function submitForm() {
+           const user = usernameInput.value.trim();
+           const pass = passwordInput.value.trim();
+           const favoriteTeam = favoriteTeamSelect.value;
+           const favoritePlayer = favoritePlayerSelect.value;
+         
+           const savedUser = localStorage.getItem("username");
+           const savedPass = localStorage.getItem("password");
+         
+           if (isLoginMode) {
+             if (!user || !pass) {
+               errorMessage.textContent = "Enter your username and password!";
+               return;
+             }
+             if (user === savedUser && pass === savedPass) {
+               localStorage.setItem("isLoggedIn", "true");
+               window.location.href = document.referrer || "index.html";
+             } else {
+               errorMessage.textContent = "Incorrect username or password!";
+             }
+           } else {
+             if (!user || !pass || !favoriteTeam || !favoritePlayer) {
+               errorMessage.textContent = "Please fill out all fields!";
+               return;
+             }
+             if (savedUser) {
+               errorMessage.textContent = "An account already exists, please log in!";
+               return;
+             }
+             localStorage.setItem("username", user);
+             localStorage.setItem("password", pass);
+             localStorage.setItem("favoriteTeam", favoriteTeam);
+             localStorage.setItem("favoritePlayer", favoritePlayer);
+             localStorage.setItem("isLoggedIn", "true");
+             localStorage.setItem("profilePic", "https://via.placeholder.com/30?text=User");
+             window.location.href = document.referrer || "index.html";
+           }
+         }
+         
+         function goHome() {
+           window.location.href = document.referrer || "index.html";
+         }
+         
+         if (localStorage.getItem("isLoggedIn") === "true") {
+           window.location.href = document.referrer || "index.html";
+         }
+      </script>
+   </body>
+</html>

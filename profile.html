@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="icon" type="image/png" href="icons/NBA.png">
+      <title>User Profile</title>
+      <meta property="og:title" content="NBA Sign Up / Login">
+      <meta property="og:description" content="Join the NBA community! Sign up or log in to follow your favorite teams and players.">
+      <meta property="og:image" content="trivia_pics/nba.avif">
+      <meta property="og:image:alt" content="NBA Sign Up and Login Page">
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="https://tvoja-stranica.com">
+      <meta property="og:site_name" content="NBA Fan Platform">
+      <!-- Twitter/X specifični tagovi (opcionalno za bolji prikaz) -->
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:image" content="trivia_pics/nba.avif">
+      <meta name="description" content="Join the NBA Fan Platform! Sign up or log in to follow your favorite NBA teams and players.">
+      <style>
+         /* Desktop stilovi (nepromijenjeni) */
+         body {
+         font-family: 'Bebas Neue', cursive;
+         background: #121212;
+         color: #eee;
+         margin: 0;
+         height: 100vh;
+         display: flex;
+         justify-content: flex-start;
+         align-items: center;
+         }
+         .slideshow {
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100vw;
+         height: 100vh;
+         background-size: cover;
+         background-repeat: no-repeat;
+         background-position: center center;
+         z-index: -1;
+         }
+         .profile-container {
+         background: #121212;
+         padding: 35px;
+         border-radius: 0;
+         box-shadow: 0 6px 25px rgba(255, 255, 255, 0.25);
+         width: 30vw;
+         min-height: 100vh;
+         display: flex;
+         flex-direction: column;
+         gap: 20px;
+         align-items: flex-start;
+         box-sizing: border-box;
+         }
+         .header-section {
+         display: flex;
+         align-items: center;
+         gap: 10px;
+         width: 100%;
+         }
+         #username-icon {
+         width: 30px;
+         height: 30px;
+         border-radius: 50%;
+         object-fit: cover;
+         cursor: pointer;
+         }
+         #username-icon-upload {
+         display: none;
+         }
+         h2 {
+         margin: 0 0 20px;
+         font-size: 3rem;
+         font-weight: 700;
+         color: #fff;
+         letter-spacing: 2px;
+         text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+         text-align: left;
+         flex-grow: 1;
+         }
+         .profile-picture {
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+         gap: 15px;
+         width: 100%;
+         }
+         #profile-pic {
+         width: 80px;
+         height: 80px;
+         border-radius: 50%;
+         object-fit: cover;
+         }
+         #profile-pic-upload {
+         display: none;
+         }
+         .profile-picture button {
+         width: 120px;
+         padding: 8px;
+         margin: 0;
+         background-color: #ffffff;
+         color: #121212;
+         border: none;
+         transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+         }
+         .profile-picture button:hover {
+         background-color: #e0e0e0;
+         transform: translateY(-2px);
+         }
+         .username-section {
+         display: flex;
+         align-items: center;
+         gap: 10px;
+         width: 100%;
+         }
+         .username {
+         font-size: 1.3rem;
+         color: #ddd;
+         font-weight: 600;
+         text-align: left;
+         text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+         flex-grow: 1;
+         }
+         .favorite-team, .favorite-player {
+         font-size: 1.1rem;
+         color: #ddd;
+         display: flex;
+         align-items: center;
+         gap: 12px;
+         user-select: none;
+         width: 100%;
+         justify-content: flex-start;
+         }
+         .favorite-team img, .favorite-player img {
+         width: 50px;
+         height: 50px;
+         border-radius: 6px;
+         object-fit: contain;
+         }
+         .favorite-team .label, .favorite-player .label {
+         font-weight: 600;
+         color: #ddd;
+         text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+         }
+         .divider {
+         width: 100%;
+         height: 1px;
+         background: linear-gradient(to right, #444, #666);
+         }
+         .edit-section {
+         width: 100%;
+         display: none;
+         gap: 30px;
+         flex-direction: column;
+         justify-content: flex-start;
+         padding: 20px 0;
+         border-top: 1px solid #555;
+         border-bottom: 1px solid #555;
+         opacity: 0;
+         transform: translateY(10px);
+         transition: opacity 0.3s ease, transform 0.3s ease;
+         }
+         .edit-section.active {
+         display: flex;
+         opacity: 1;
+         transform: translateY(0);
+         }
+         .change-team, .change-player, .edit-username {
+         flex: 1;
+         display: flex;
+         flex-direction: column;
+         align-items: flex-start;
+         width: 100%;
+         padding: 10px 0;
+         }
+         .change-team h3, .change-player h3, .edit-username h3 {
+         font-size: 1.5rem;
+         margin: 0 0 15px;
+         color: #fff;
+         font-weight: 600;
+         text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+         text-align: left;
+         }
+         select, input[type="text"] {
+         width: 100%;
+         padding: 12px;
+         margin: 8px 0;
+         border: 1px solid #555;
+         border-radius: 5px;
+         background: rgba(255, 255, 255, 0.15);
+         color: black;
+         font-size: 1rem;
+         outline: none;
+         transition: border-color 0.3s ease, box-shadow 0.3s ease;
+         font-family: 'Bebas Neue', cursive;
+         }
+         select:focus, input[type="text"]:focus {
+         border-color: #3b5998;
+         box-shadow: 0 0 8px rgba(59, 89, 152, 0.7);
+         }
+         #new-team-logo, #new-player-logo {
+         display: none;
+         margin: 12px 0;
+         width: 50px;
+         height: 50px;
+         border-radius: 6px;
+         object-fit: contain;
+         }
+         button {
+         width: 100%;
+         padding: 10px;
+         margin: 8px 0;
+         border: none;
+         border-radius: 6px;
+         font-size: 1rem;
+         cursor: pointer;
+         font-weight: 600;
+         background-color: #ffffff;
+         color: #121212;
+         transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+         font-family: 'Bebas Neue', cursive;
+         }
+         button:hover {
+         background-color: #e0e0e0;
+         transform: translateY(-2px);
+         }
+         #change-team-btn, #change-player-btn, #change-username-btn {
+         display: none;
+         }
+         .logout-btn {
+         background-color: #ff0000;
+         color: #ffffff;
+         }
+         .logout-btn:hover {
+         background-color: #cc0000;
+         transform: translateY(-2px);
+         }
+         .recent-activity {
+         width: 100%;
+         padding: 15px 0;
+         border-top: 1px solid #555;
+         text-align: left;
+         display: none;
+         opacity: 0;
+         transform: translateY(10px);
+         transition: opacity 0.3s ease, transform 0.3s ease;
+         }
+         .recent-activity.active {
+         display: block;
+         opacity: 1;
+         transform: translateY(0);
+         }
+         .recent-activity h3 {
+         font-size: 1.4rem;
+         margin: 0 0 12px;
+         color: #fff;
+         font-weight: 600;
+         text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+         text-align: left;
+         }
+         .recent-activity ul {
+         list-style: none;
+         padding: 0;
+         font-size: 0.9rem;
+         color: #ddd;
+         font-family: 'Bebas Neue', cursive;
+         }
+         .recent-activity li {
+         margin-bottom: 8px;
+         }
+         .navigation {
+         width: 100%;
+         display: flex;
+         gap: 15px;
+         justify-content: flex-start;
+         }
+         .nba-logo {
+         width: 80px;
+         height: auto;
+         }
+         .delete-btn {
+         background-color: #8b0000;
+         color: #ffffff;
+         }
+         .delete-btn:hover {
+         background-color: #a00000;
+         transform: translateY(-2px);
+         }
+         .popup-overlay {
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background: rgba(18, 18, 18, 0.85);
+         display: none;
+         justify-content: center;
+         align-items: center;
+         z-index: 999;
+         }
+         .popup-content {
+         background: #1e1e1e;
+         padding: 25px;
+         border-radius: 10px;
+         max-width: 350px;
+         text-align: center;
+         color: #fff;
+         box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+         }
+         .popup-content h3 {
+         margin-bottom: 10px;
+         }
+         .popup-content p {
+         font-size: 0.95rem;
+         color: #ccc;
+         margin-bottom: 20px;
+         }
+         .popup-buttons {
+         display: flex;
+         justify-content: space-around;
+         gap: 10px;
+         }
+         .confirm-delete {
+         background-color: #8b0000;
+         color: white;
+         padding: 8px 15px;
+         border: none;
+         cursor: pointer;
+         border-radius: 6px;
+         }
+         .confirm-delete:hover {
+         background-color: #a00000;
+         }
+         .cancel-delete {
+         background-color: #444;
+         color: white;
+         padding: 8px 15px;
+         border: none;
+         cursor: pointer;
+         border-radius: 6px;
+         }
+         .cancel-delete:hover {
+         background-color: #555;
+         }
+         /* Novi mobilni raspored (≤ 768px) */
+         @media (max-width: 768px) {
+         body {
+         font-family: 'Bebas Neue', cursive;
+         justify-content: center;
+         align-items: flex-start;
+         overflow-x: hidden;
+         padding: 10px 0;
+         }
+         .slideshow {
+         width: 100vw;
+         height: 100vh;
+         background-size: cover;
+         background-position: center;
+         z-index: -1;
+         overflow: hidden;
+         }
+         .profile-container {
+         width: 100%;
+         max-width: 95%;
+         margin: 10px auto;
+         padding: 15px;
+         min-height: auto; /* Prilagođava visinu sadržaju */
+         background: rgba(18, 18, 18, 0.9); /* Malo prozirniji za kontrast s pozadinom */
+         border-radius: 10px; /* Zaobljeni rubovi */
+         box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+         display: flex;
+         flex-direction: column;
+         gap: 15px;
+         align-items: center; /* Centriranje svih elemenata unutar profile-container */
+         }
+         .header-section {
+         flex-direction: column; /* Stupac za logo i naslov */
+         align-items: center;
+         gap: 8px;
+         }
+         .nba-logo {
+         width: 50px; /* Manji logo */
+         height: auto;
+         }
+         h2 {
+         font-size: 1.8rem; /* Manji naslov */
+         margin: 0 0 10px;
+         letter-spacing: 1px;
+         text-align: center;
+         }
+         .profile-picture {
+         flex-direction: column; /* Stupac za sliku i gumb */
+         align-items: center;
+         gap: 10px;
+         }
+         #profile-pic {
+         width: 50px; /* Manja slika profila */
+         height: 50px;
+         border: 2px solid #fff; /* Bijeli obrub za kontrast */
+         }
+         .profile-picture button {
+         width: 90px;
+         padding: 6px;
+         font-size: 0.85rem;
+         border-radius: 5px;
+         }
+         .username-section {
+         display: flex;
+         flex-direction: column; /* Promijenjeno u stupac za bolje centriranje */
+         align-items: center; /* Centriranje sadržaja */
+         justify-content: center;
+         text-align: center;
+         width: 100%;
+         }
+         .username {
+         font-size: 1rem; /* Manji font */
+         text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+         width: 100%;
+         text-align: center; /* Eksplicitno centriranje teksta */
+         }
+         #username-icon {
+         display: none; /* Sakrij ikonu korisničkog imena */
+         }
+         .favorite-team, .favorite-player {
+         flex-direction: column; /* Stupac za sliku i tekst */
+         align-items: center; /* Centriranje elemenata */
+         justify-content: center;
+         gap: 8px;
+         font-size: 0.9rem;
+         width: 100%;
+         text-align: center; /* Centriranje teksta */
+         }
+         .favorite-team img, .favorite-player img {
+         width: 35px; /* Manje slike */
+         height: 35px;
+         border-radius: 4px;
+         }
+         .favorite-team .label, .favorite-player .label {
+         font-size: 0.9rem;
+         text-align: center; /* Centriranje labela */
+         width: 100%;
+         }
+         .favorite-team span, .favorite-player span {
+         text-align: center; /* Centriranje svih span elemenata */
+         width: 100%;
+         }
+         .divider {
+         height: 1px;
+         background: linear-gradient(to right, #555, #777);
+         margin: 10px 0;
+         }
+         .edit-section {
+         gap: 15px; /* Manji razmak */
+         padding: 10px 0;
+         border-top: 1px solid #555;
+         border-bottom: 1px solid #555;
+         }
+         .edit-section.active {
+         display: flex;
+         opacity: 1;
+         transform: translateY(0);
+         }
+         .change-team, .change-player, .edit-username {
+         padding: 8px 0;
+         align-items: center; /* Centriranje unosa i gumba */
+         }
+         .change-team h3, .change-player h3, .edit-username h3 {
+         font-size: 1.2rem; /* Manji naslovi */
+         margin-bottom: 8px;
+         text-align: center; /* Centriranje naslova */
+         }
+         select, input[type="text"] {
+         padding: 8px;
+         font-size: 0.85rem;
+         margin: 5px 0;
+         border-radius: 4px;
+         background: rgba(255, 255, 255, 0.2);
+         }
+         #new-team-logo, #new-player-logo {
+         width: 35px;
+         height: 35px;
+         margin: 5px auto; /* Centriranje slika */
+         display: block;
+         }
+         button {
+         padding: 6px;
+         font-size: 0.85rem;
+         border-radius: 5px;
+         }
+         .edit-profile-btn {
+         background-color: #ffcc00; /* Žuta boja za istaknutost */
+         color: #121212;
+         }
+         .edit-profile-btn:hover {
+         background-color: #e6b800;
+         }
+         .logout-btn {
+         background-color: #e60000;
+         }
+         .logout-btn:hover {
+         background-color: #b30000;
+         }
+         .delete-btn {
+         background-color: #6b0000;
+         }
+         .delete-btn:hover {
+         background-color: #800000;
+         }
+         .navigation {
+         flex-wrap: wrap;
+         gap: 8px;
+         justify-content: center;
+         }
+         .recent-activity {
+         padding: 10px 0;
+         }
+         .recent-activity h3 {
+         font-size: 1.1rem;
+         margin-bottom: 8px;
+         text-align: center; /* Centriranje naslova */
+         }
+         .recent-activity ul {
+         font-size: 0.8rem;
+         text-align: center; /* Centriranje liste */
+         }
+         .recent-activity li {
+         margin-bottom: 6px;
+         }
+         .popup-overlay {
+         padding: 10px;
+         }
+         .popup-content {
+         max-width: 85%;
+         padding: 15px;
+         border-radius: 8px;
+         }
+         .popup-content h3 {
+         font-size: 1.4rem;
+         margin-bottom: 8px;
+         text-align: center; /* Centriranje naslova */
+         }
+         .popup-content p {
+         font-size: 0.85rem;
+         margin-bottom: 15px;
+         text-align: center; /* Centriranje teksta */
+         }
+         .popup-buttons {
+         flex-direction: row;
+         gap: 8px;
+         justify-content: center; /* Centriranje gumba */
+         }
+         .confirm-delete, .cancel-delete {
+         padding: 6px 10px;
+         font-size: 0.85rem;
+         border-radius: 5px;
+         }
+         }
+      </style>
+      <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+   </head>
+   <body>
+      <div class="slideshow"></div>
+      <div class="profile-container">
+         <div class="header-section">
+            <img src="icons/nba_logo.svg" alt="Nba logo" class="nba-logo" />
+            <h2>id</h2>
+         </div>
+         <div class="divider"></div>
+         <div class="profile-picture">
+            <img id="profile-pic" alt="Profile picture" src="images/user.jpg" />
+            <button onclick="document.getElementById('profile-pic-upload').click()">Change Picture</button>
+            <input type="file" id="profile-pic-upload" accept="image/*" />
+         </div>
+         <div class="divider"></div>
+         <div class="username-section">
+            <div class="username" id="profile-username"></div>
+         </div>
+         <div class="divider"></div>
+         <div class="favorite-team" id="favorite-team">
+            <span class="label">Favorite Team:</span>
+            <img id="team-logo" alt="Team logo" />
+            <span id="team-name"></span>
+         </div>
+         <div class="divider"></div>
+         <div class="favorite-player">
+            <span class="label">Favorite Player:</span>
+            <img id="player-logo" alt="Player logo" />
+            <span id="player-info"></span>
+         </div>
+         <div class="divider"></div>
+         <button class="edit-profile-btn" onclick="toggleEditProfile()">Edit Profile</button>
+         <div class="edit-section" id="edit-section">
+            <div class="edit-username">
+               <h3>Username</h3>
+               <input type="text" id="new-username" placeholder="New username" />
+               <button id="change-username-btn" onclick="changeUsername()">Change</button>
+            </div>
+            <div class="change-team">
+               <h3>Favorite Team</h3>
+               <select id="newFavoriteTeam" aria-label="Select new favorite team">
+                  <option value="" disabled selected>Select team</option>
+                  <option value="Los Angeles Lakers" data-logo="https://cdn.nba.com/teams/uploads/sites/1610612747/2021/12/lakers_70x70.svg">Los Angeles Lakers</option>
+                  <option value="Golden State Warriors" data-logo="https://cdn.nba.com/logos/nba/1610612744/global/L/logo.svg">Golden State Warriors</option>
+                  <option value="Brooklyn Nets" data-logo="https://cdn.nba.com/teams/uploads/sites/1610612751/2024/07/BKN_Primary.svg">Brooklyn Nets</option>
+                  <option value="Chicago Bulls" data-logo="https://cdn.nba.com/teams/uploads/sites/1610612741/2021/10/bulls-svg.svg">Chicago Bulls</option>
+                  <option value="Miami Heat" data-logo="https://cdn.nba.com/teams/uploads/sites/1610612748/2025/04/core.svg">Miami Heat</option>
+                  <option value="Atlanta Hawks" data-logo="https://cdn.nba.com/teams/uploads/sites/1610612737/2023/01/atl_hawks_primary_icon.svg">Atlanta Hawks</option>
+                  <option value="Boston Celtics" data-logo="https://cdn.nba.com/logos/nba/1610612738/global/L/logo.svg">Boston Celtics</option>
+                  <option value="Charlotte Hornets" data-logo="https://cdn.nba.com/logos/nba/1610612766/global/L/logo.svg">Charlotte Hornets</option>
+                  <option value="Cleveland Cavaliers" data-logo="https://cdn.nba.com/teams/uploads/sites/1610612739/2022/03/Asset-4-3.svg">Cleveland Cavaliers</option>
+                  <option value="Dallas Mavericks" data-logo="https://cdn.nba.com/logos/nba/1610612742/global/L/logo.svg">Dallas Mavericks</option>
+                  <option value="Denver Nuggets" data-logo="https://cdn.nba.com/logos/nba/1610612743/global/L/logo.svg">Denver Nuggets</option>
+                  <option value="Detroit Pistons" data-logo="https://cdn.nba.com/teams/uploads/sites/1610612765/2021/09/dp-primary.svg">Detroit Pistons</option>
+                  <option value="Houston Rockets" data-logo="https://cdn.nba.com/teams/uploads/sites/1610612745/2023/10/logo-6.46.56-PM.svg">Houston Rockets</option>
+                  <option value="Indiana Pacers" data-logo="https://cdn.nba.com/logos/nba/1610612754/global/L/logo.svg">Indiana Pacers</option>
+                  <option value="LA Clippers" data-logo="https://cdn.nba.com/teams/uploads/sites/1610612746/2024/06/LAClippers_Global_rgb.svg">LA Clippers</option>
+                  <option value="Memphis Grizzlies" data-logo="https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/mem.png&h=200&w=200">Memphis Grizzlies</option>
+                  <option value="Milwaukee Bucks" data-logo="https://cdn.nba.com/teams/uploads/sites/1610612749/2021/09/logo.svg">Milwaukee Bucks</option>
+                  <option value="Minnesota Timberwolves" data-logo="https://cdn.nba.com/teams/uploads/sites/1610612750/2021/11/logo-1.svg">Minnesota Timberwolves</option>
+                  <option value="New Orleans Pelicans" data-logo="https://cdn.nba.com/logos/nba/1610612740/global/L/logo.svg">New Orleans Pelicans</option>
+                  <option value="New York Knicks" data-logo="https://cdn.nba.com/teams/uploads/sites/1610612752/2022/10/NYK2223-PRIMARY-LOGO.svg">New York Knicks</option>
+                  <option value="Oklahoma City Thunder" data-logo="https://cdn.nba.com/teams/uploads/sites/1610612760/2021/12/logo.svg">Oklahoma City Thunder</option>
+                  <option value="Orlando Magic" data-logo="https://cdn.nba.com/teams/uploads/sites/1610612753/2025/06/Orlando-Magic-Global-Logo.svg">Orlando Magic</option>
+                  <option value="Philadelphia 76ers" data-logo="https://cdn.nba.com/logos/nba/1610612755/global/L/logo.svg">Philadelphia 76ers</option>
+                  <option value="Phoenix Suns" data-logo="https://cdn.nba.com/teams/uploads/sites/1610612756/2022/08/suns-logo.svg">Phoenix Suns</option>
+                  <option value="Portland Trail Blazers" data-logo="https://cdn.nba.com/teams/uploads/sites/1610612757/2022/03/tb_primary_rgb.svg">Portland Trail Blazers</option>
+                  <option value="Sacramento Kings" data-logo="https://cdn.nba.com/teams/uploads/sites/1610612758/2022/04/Kings-Primary.svg">Sacramento Kings</option>
+                  <option value="San Antonio Spurs" data-logo="https://cdn.nba.com/teams/uploads/sites/1610612759/2022/05/GlobalLogo_WHT-1.svg">San Antonio Spurs</option>
+                  <option value="Toronto Raptors" data-logo="https://cdn.nba.com/teams/uploads/sites/1610612761/2021/09/Toronto-Raptors.svg">Toronto Raptors</option>
+                  <option value="Utah Jazz" data-logo="https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/utah.png&h=200&w=200">Utah Jazz</option>
+                  <option value="Washington Wizards" data-logo="https://cdn.nba.com/teams/uploads/sites/1610612764/2022/06/wiz-primary.svg">Washington Wizards</option>
+               </select>
+               <img id="new-team-logo" alt="New team logo" />
+               <button id="change-team-btn" onclick="changeTeam()">Change</button>
+            </div>
+            <div class="change-player">
+               <h3>Favorite Player</h3>
+               <select id="favoritePlayer" aria-label="Select favorite player">
+                  <option value="" disabled selected>Select player</option>
+                  <option value="LeBron James" data-info="Lakers, SF" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/2544.png">LeBron James</option>
+                  <option value="Stephen Curry" data-info="Warriors, PG" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/201939.png">Stephen Curry</option>
+                  <option value="Kevin Durant" data-info="Nets, PF" data-logo="https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3202.png&w=350&h=254">Kevin Durant</option>
+                  <option value="Michael Jordan" data-info="Bulls, SG" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/893.png">Michael Jordan</option>
+                  <option value="Dwyane Wade" data-info="Heat, SG" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/2548.png">Dwyane Wade</option>
+                  <option value="Kobe Bryant" data-info="Lakers, SG" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/977.png">Kobe Bryant</option>
+                  <option value="Magic Johnson" data-info="Lakers, PG" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/77142.png">Magic Johnson</option>
+                  <option value="Larry Bird" data-info="Celtics, SF" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/1449.png">Larry Bird</option>
+                  <option value="Kareem Abdul-Jabbar" data-info="Lakers, C" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/76003.png">Kareem Abdul-Jabbar</option>
+                  <option value="Wilt Chamberlain" data-info="Lakers, C" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/76375.png">Wilt Chamberlain</option>
+                  <option value="Bill Russell" data-info="Celtics, C" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/78049.png">Bill Russell</option>
+                  <option value="Shaquille O'Neal" data-info="Lakers, C" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/406.png">Shaquille O'Neal</option>
+                  <option value="Tim Duncan" data-info="Spurs, PF" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/1495.png">Tim Duncan</option>
+                  <option value="Hakeem Olajuwon" data-info="Rockets, C" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/165.png">Hakeem Olajuwon</option>
+                  <option value="Oscar Robertson" data-info="Royals, PG" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/600015.png">Oscar Robertson</option>
+                  <option value="Jerry West" data-info="Lakers, PG" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/78497.png">Jerry West</option>
+                  <option value="Elgin Baylor" data-info="Lakers, SF" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/76127.png">Elgin Baylor</option>
+                  <option value="David Robinson" data-info="Spurs, C" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/764.png">David Robinson</option>
+                  <option value="Karl Malone" data-info="Jazz, PF" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/252.png">Karl Malone</option>
+                  <option value="John Stockton" data-info="Jazz, PG" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/304.png">John Stockton</option>
+                  <option value="Charles Barkley" data-info="Suns, PF" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/787.png">Charles Barkley</option>
+                  <option value="Patrick Ewing" data-info="Knicks, C" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/121.png">Patrick Ewing</option>
+                  <option value="Dirk Nowitzki" data-info="Mavericks, PF" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/1717.png">Dirk Nowitzki</option>
+                  <option value="Allen Iverson" data-info="76ers, SG" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/947.png">Allen Iverson</option>
+                  <option value="Scottie Pippen" data-info="Bulls, SF" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/937.png">Scottie Pippen</option>
+                  <option value="Isiah Thomas" data-info="Pistons, PG" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/78318.png">Isiah Thomas</option>
+                  <option value="Dominique Wilkins" data-info="Hawks, SF" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/1122.png">Dominique Wilkins</option>
+                  <option value="Clyde Drexler" data-info="Trail Blazers, SG" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/17.png">Clyde Drexler</option>
+                  <option value="Julius Erving" data-info="76ers, SF" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/76681.png">Julius Erving</option>
+                  <option value="Moses Malone" data-info="76ers, C" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/77449.png">Moses Malone</option>
+                  <option value="Kevin Garnett" data-info="Timberwolves, PF" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/708.png">Kevin Garnett</option>
+                  <option value="Paul Pierce" data-info="Celtics, SF" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/1718.png">Paul Pierce</option>
+                  <option value="Ray Allen" data-info="Celtics, SG" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/951.png">Ray Allen</option>
+                  <option value="Steve Nash" data-info="Suns, PG" data-logo="https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/592.png&w=350&h=254">Steve Nash</option>
+                  <option value="Jason Kidd" data-info="Nets, PG" data-logo="https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/429.png&w=350&h=254">Jason Kidd</option>
+                  <option value="Chris Paul" data-info="Suns, PG" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/101108.png">Chris Paul</option>
+                  <option value="Russell Westbrook" data-info="Thunder, PG" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/201566.png">Russell Westbrook</option>
+                  <option value="James Harden" data-info="Rockets, SG" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/201935.png">James Harden</option>
+                  <option value="Gary Payton" data-info="Supersonics, PG" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/56.png">Gary Payton</option>
+                  <option value="Dennis Rodman" data-info="Bulls, PF" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/23.png">Dennis Rodman</option>
+                  <option value="Reggie Miller" data-info="Pacers, SG" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/397.png">Reggie Miller</option>
+                  <option value="Vince Carter" data-info="Raptors, SG" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/1713.png">Vince Carter</option>
+                  <option value="Tracy McGrady" data-info="Raptors, SG" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/1503.png">Tracy McGrady</option>
+                  <option value="Bill Walton" data-info="Trail Blazers, C" data-logo="https://cdn.nba.com/headshots/nba/latest/1040x760/78450.png">Bill Walton</option>
+               </select>
+               <img id="new-player-logo" alt="Player logo" />
+               <button id="change-player-btn" onclick="changePlayer()">Change</button>
+            </div>
+         </div>
+         <div class="recent-activity" id="recent-activity">
+            <h3>Recent Activity</h3>
+            <ul id="activity-list"></ul>
+         </div>
+         <div class="navigation">
+            <button onclick="goHome()">Back</button>
+            <button class="logout-btn" onclick="logout()">Log Out</button>
+            <button class="delete-btn" onclick="deleteAccount()">Delete Account</button>
+         </div>
+      </div>
+      <script>
+         // Redirect to previous page if not logged in
+         if (localStorage.getItem("isLoggedIn") !== "true") {
+         window.location.href = document.referrer || "index.html";
+         }
+         
+         const username = localStorage.getItem("username") || "Unknown";
+         if (!localStorage.getItem("profilePic")) {
+         localStorage.setItem("profilePic", "images/user.jpg");
+         }
+         if (!localStorage.getItem("usernameIcon")) {
+         localStorage.setItem("usernameIcon", "images/user.jpg");
+         }
+         
+         const teamLogos = {
+         "Los Angeles Lakers": "https://cdn.nba.com/teams/uploads/sites/1610612747/2021/12/lakers_70x70.svg",
+         "Golden State Warriors": "https://cdn.nba.com/logos/nba/1610612744/global/L/logo.svg",
+         "Brooklyn Nets": "https://cdn.nba.com/teams/uploads/sites/1610612751/2024/07/BKN_Primary.svg",
+         "Chicago Bulls": "https://cdn.nba.com/teams/uploads/sites/1610612741/2021/10/bulls-svg.svg",
+         "Miami Heat": "https://cdn.nba.com/teams/uploads/sites/1610612748/2025/04/core.svg",
+         "Atlanta Hawks": "https://cdn.nba.com/teams/uploads/sites/1610612737/2023/01/atl_hawks_primary_icon.svg",
+         "Boston Celtics": "https://cdn.nba.com/logos/nba/1610612738/global/L/logo.svg",
+         "Charlotte Hornets": "https://cdn.nba.com/logos/nba/1610612766/global/L/logo.svg",
+         "Cleveland Cavaliers": "https://cdn.nba.com/teams/uploads/sites/1610612739/2022/03/Asset-4-3.svg",
+         "Dallas Mavericks": "https://cdn.nba.com/logos/nba/1610612742/global/L/logo.svg",
+         "Denver Nuggets": "https://cdn.nba.com/logos/nba/1610612743/global/L/logo.svg",
+         "Detroit Pistons": "https://cdn.nba.com/teams/uploads/sites/1610612765/2021/09/dp-primary.svg",
+         "Houston Rockets": "https://cdn.nba.com/teams/uploads/sites/1610612745/2023/10/logo-6.46.56-PM.svg",
+         "Indiana Pacers": "https://cdn.nba.com/logos/nba/1610612754/global/L/logo.svg",
+         "LA Clippers": "https://cdn.nba.com/teams/uploads/sites/1610612746/2024/06/LAClippers_Global_rgb.svg",
+         "Memphis Grizzlies": "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/mem.png&h=200&w=200",
+         "Milwaukee Bucks": "https://cdn.nba.com/teams/uploads/sites/1610612749/2021/09/logo.svg",
+         "Minnesota Timberwolves": "https://cdn.nba.com/teams/uploads/sites/1610612750/2021/11/logo-1.svg",
+         "New Orleans Pelicans": "https://cdn.nba.com/logos/nba/1610612740/global/L/logo.svg",
+         "New York Knicks": "https://cdn.nba.com/teams/uploads/sites/1610612752/2022/10/NYK2223-PRIMARY-LOGO.svg",
+         "Oklahoma City Thunder": "https://cdn.nba.com/teams/uploads/sites/1610612760/2021/12/logo.svg",
+         "Orlando Magic": "https://cdn.nba.com/teams/uploads/sites/1610612753/2025/06/Orlando-Magic-Global-Logo.svg",
+         "Philadelphia 76ers": "https://cdn.nba.com/logos/nba/1610612755/global/L/logo.svg",
+         "Phoenix Suns": "https://cdn.nba.com/teams/uploads/sites/1610612756/2022/08/suns-logo.svg",
+         "Portland Trail Blazers": "https://cdn.nba.com/teams/uploads/sites/1610612757/2022/03/tb_primary_rgb.svg",
+         "Sacramento Kings": "https://cdn.nba.com/teams/uploads/sites/1610612758/2022/04/Kings-Primary.svg",
+         "San Antonio Spurs": "https://cdn.nba.com/teams/uploads/sites/1610612759/2022/05/GlobalLogo_WHT-1.svg",
+         "Toronto Raptors": "https://cdn.nba.com/teams/uploads/sites/1610612761/2021/09/Toronto-Raptors.svg",
+         "Utah Jazz": "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/utah.png&h=200&w=200",
+         "Washington Wizards": "https://cdn.nba.com/teams/uploads/sites/1610612764/2022/06/wiz-primary.svg"
+         };
+         
+         const favoriteTeam = localStorage.getItem("favoriteTeam") || "Not selected";
+         
+         document.getElementById("profile-username").textContent = `Username: ${username}`;
+         
+         const teamLogoEl = document.getElementById("team-logo");
+         const teamNameEl = document.getElementById("team-name");
+         
+         if (favoriteTeam !== "Not selected" && teamLogos[favoriteTeam]) {
+         teamLogoEl.src = teamLogos[favoriteTeam];
+         teamLogoEl.style.display = "inline-block";
+         teamNameEl.textContent = favoriteTeam;
+         } else {
+         teamLogoEl.style.display = "none";
+         teamNameEl.textContent = "Not selected";
+         }
+         
+         // Profile picture
+         const profilePic = document.getElementById("profile-pic");
+         const profilePicUpload = document.getElementById("profile-pic-upload");
+         const defaultProfilePic = "images/user.jpg";
+         
+         // Set initial profile picture from localStorage or default
+         if (localStorage.getItem("profilePic")) {
+         profilePic.src = localStorage.getItem("profilePic");
+         } else {
+         profilePic.src = defaultProfilePic;
+         localStorage.setItem("profilePic", defaultProfilePic);
+         }
+         
+         // Reset to default image when "Change Picture" button is clicked
+         document.querySelector(".profile-picture button").addEventListener("click", () => {
+         profilePic.src = defaultProfilePic;
+         localStorage.setItem("profilePic", defaultProfilePic); // Ensure localStorage is updated
+         });
+         
+         // Handle file selection
+         profilePicUpload.addEventListener("change", (event) => {
+         const file = event.target.files[0];
+         if (file) {
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            profilePic.src = e.target.result;
+            localStorage.setItem("profilePic", e.target.result);
+            logActivity("Changed profile picture");
+          };
+          reader.readAsDataURL(file);
+         } else {
+          profilePic.src = defaultProfilePic;
+          localStorage.setItem("profilePic", defaultProfilePic);
+         }
+         });
+         
+         // Slideshow
+         const slideshow = document.querySelector(".slideshow");
+         
+         const images = [
+         "background/nba5.jpg",
+         "background/nba11.jpg",
+         "background/nba12.jpg",
+         "background/nba20.jpg",
+         "background/nba30.png"
+         ];
+         
+         let currentImageIndex = 0;
+         
+         function changeBackground() {
+         slideshow.style.backgroundImage = `url('${images[currentImageIndex]}')`;
+         currentImageIndex = (currentImageIndex + 1) % images.length;
+         }
+         
+         changeBackground();
+         setInterval(changeBackground, 8000);
+         
+         // Toggle edit profile
+         function toggleEditProfile() {
+         const editSection = document.getElementById("edit-section");
+         const recentActivity = document.getElementById("recent-activity");
+         const editButton = document.querySelector(".edit-profile-btn");
+         if (editSection.classList.contains("active")) {
+          editSection.classList.remove("active");
+          recentActivity.classList.remove("active");
+          editButton.textContent = "Edit Profile";
+         } else {
+          editSection.classList.add("active");
+          recentActivity.classList.add("active");
+          editButton.textContent = "Hide Edit";
+         }
+         }
+         
+         // Change favorite team
+         const newFavoriteTeamSelect = document.getElementById("newFavoriteTeam");
+         const newTeamLogo = document.getElementById("new-team-logo");
+         const changeTeamBtn = document.getElementById("change-team-btn");
+         
+         newFavoriteTeamSelect.addEventListener("change", () => {
+         const selectedOption = newFavoriteTeamSelect.options[newFavoriteTeamSelect.selectedIndex];
+         const logoUrl = selectedOption.getAttribute("data-logo");
+         if (logoUrl) {
+          newTeamLogo.src = logoUrl;
+          newTeamLogo.style.display = "block";
+          changeTeamBtn.style.display = "block";
+         } else {
+          newTeamLogo.src = "";
+          newTeamLogo.style.display = "none";
+          changeTeamBtn.style.display = "none";
+         }
+         });
+         
+         function changeTeam() {
+         const newTeam = newFavoriteTeamSelect.value;
+         if (newTeam && teamLogos[newTeam]) {
+          localStorage.setItem("favoriteTeam", newTeam);
+          teamNameEl.textContent = newTeam;
+          teamLogoEl.src = teamLogos[newTeam];
+          teamLogoEl.style.display = "inline-block";
+          newFavoriteTeamSelect.selectedIndex = 0;
+          newTeamLogo.style.display = "none";
+          changeTeamBtn.style.display = "none";
+          logActivity(`Changed favorite team to ${newTeam}`);
+         }
+         }
+         
+         // Change favorite player
+         const favoritePlayerSelect = document.getElementById("favoritePlayer");
+         const newPlayerLogo = document.getElementById("new-player-logo");
+         const changePlayerBtn = document.getElementById("change-player-btn");
+         const playerInfo = document.getElementById("player-info");
+         
+         const savedPlayer = localStorage.getItem("favoritePlayer") || "Not selected";
+         if (savedPlayer !== "Not selected") {
+         const selectedOption = Array.from(favoritePlayerSelect.options).find(opt => opt.value === savedPlayer);
+         const playerInfoText = selectedOption ? selectedOption.getAttribute("data-info") : "N/A";
+         playerInfo.textContent = `${savedPlayer} (${playerInfoText})`;
+         const playerLogoUrl = selectedOption ? selectedOption.getAttribute("data-logo") : "";
+         if (playerLogoUrl) {
+          document.getElementById("player-logo").src = playerLogoUrl;
+          document.getElementById("player-logo").style.display = "inline-block";
+         } else {
+          document.getElementById("player-logo").style.display = "none";
+         }
+         } else {
+         playerInfo.textContent = "Not selected";
+         document.getElementById("player-logo").style.display = "none";
+         }
+         
+         favoritePlayerSelect.addEventListener("change", () => {
+         const selectedOption = favoritePlayerSelect.options[favoritePlayerSelect.selectedIndex];
+         const logoUrl = selectedOption.getAttribute("data-logo");
+         const playerInfoText = selectedOption.getAttribute("data-info");
+         if (logoUrl && playerInfoText) {
+          newPlayerLogo.src = logoUrl;
+          newPlayerLogo.style.display = "block";
+          changePlayerBtn.style.display = "block";
+         } else {
+          newPlayerLogo.src = "";
+          newPlayerLogo.style.display = "none";
+          changePlayerBtn.style.display = "none";
+         }
+         });
+         
+         function changePlayer() {
+         const newPlayer = favoritePlayerSelect.value;
+         if (newPlayer) {
+          const selectedOption = favoritePlayerSelect.options[favoritePlayerSelect.selectedIndex];
+          const playerInfoText = selectedOption.getAttribute("data-info");
+          const logoUrl = selectedOption.getAttribute("data-logo");
+          localStorage.setItem("favoritePlayer", newPlayer);
+          playerInfo.textContent = `${newPlayer} (${playerInfoText})`;
+          document.getElementById("player-logo").src = logoUrl;
+          document.getElementById("player-logo").style.display = "inline-block";
+          favoritePlayerSelect.selectedIndex = 0;
+          newPlayerLogo.style.display = "none";
+          changePlayerBtn.style.display = "none";
+          logActivity(`Changed favorite player to ${newPlayer}`);
+         }
+         }
+         
+         // Change username
+         const newUsernameInput = document.getElementById("new-username");
+         const changeUsernameBtn = document.getElementById("change-username-btn");
+         
+         newUsernameInput.addEventListener("input", () => {
+         changeUsernameBtn.style.display = newUsernameInput.value.trim() ? "block" : "none";
+         });
+         
+         function changeUsername() {
+         const newUsername = newUsernameInput.value.trim();
+         if (newUsername) {
+          localStorage.setItem("username", newUsername);
+          document.getElementById("profile-username").textContent = `Username: ${newUsername}`;
+          newUsernameInput.value = "";
+          changeUsernameBtn.style.display = "none";
+          logActivity(`Changed username to ${newUsername}`);
+         }
+         }
+         
+         // Recent activity
+         function logActivity(action) {
+         const activities = JSON.parse(localStorage.getItem("activities") || "[]");
+         activities.unshift({ action, timestamp: new Date().toLocaleString() });
+         localStorage.setItem("activities", JSON.stringify(activities.slice(0, 5)));
+         updateActivityList();
+         }
+         
+         function updateActivityList() {
+         const activityList = document.getElementById("activity-list");
+         const activities = JSON.parse(localStorage.getItem("activities") || "[]");
+         activityList.innerHTML = activities.map(act => `<li>${act.timestamp}: ${act.action}</li>`).join("");
+         }
+         
+         function deleteAccount() {
+         document.getElementById("delete-popup").style.display = "flex";
+         }
+         
+         function closeDeletePopup() {
+         document.getElementById("delete-popup").style.display = "none";
+         }
+         
+         function confirmDelete() {
+         localStorage.clear();
+         window.location.href = document.referrer || "index.html";
+         }
+         
+         function logout() {
+         localStorage.removeItem("isLoggedIn");
+         window.location.href = document.referrer || "index.html";
+         }
+         
+         function goHome() {
+         window.location.href = document.referrer || "index.html";
+         }
+         
+         // Log login
+         logActivity("Logged in to profile");
+         
+         // Initial load
+         updateActivityList();
+      </script>
+      <!-- Delete Account Popup -->
+      <div id="delete-popup" class="popup-overlay">
+         <div class="popup-content">
+            <h3>Are you sure you want to delete your account?</h3>
+            <p>This action cannot be undone.</p>
+            <div class="popup-buttons">
+               <button class="confirm-delete" onclick="confirmDelete()">Yes, delete</button>
+               <button class="cancel-delete" onclick="closeDeletePopup()">Cancel</button>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

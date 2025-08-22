@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="bs">
+   <head>
+      <meta charset="UTF-8" />
+      <title>Prijava</title>
+      <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+      <style>
+         body {
+         margin: 0; height: 100vh;
+         background: linear-gradient(135deg, #121212, #1e1e1e);
+         font-family: 'Bebas Neue', cursive;
+         color: #eee;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         }
+         .container {
+         background: #222;
+         padding: 40px 35px;
+         border-radius: 12px;
+         box-shadow: 0 0 20px rgba(255,255,255,0.1);
+         width: 380px;
+         text-align: center;
+         }
+         h2 {
+         font-size: 3rem;
+         margin-bottom: 25px;
+         letter-spacing: 2px;
+         }
+         input[type="text"],
+         input[type="password"] {
+         width: 100%;
+         padding: 12px 10px;
+         margin: 12px 0;
+         border-radius: 8px;
+         border: none;
+         font-size: 1.1rem;
+         }
+         input[type="text"]:focus,
+         input[type="password"]:focus {
+         outline: 2px solid #4e54c8;
+         background: #333;
+         color: #eee;
+         }
+         button {
+         width: 100%;
+         padding: 14px 0;
+         font-size: 1.2rem;
+         font-weight: bold;
+         background: #4e54c8;
+         border: none;
+         border-radius: 8px;
+         color: white;
+         cursor: pointer;
+         transition: background-color 0.3s;
+         }
+         button:hover {
+         background: #3b3fa0;
+         }
+         .switch-link {
+         margin-top: 15px;
+         font-size: 1rem;
+         color: #ccc;
+         cursor: pointer;
+         user-select: none;
+         }
+         .switch-link:hover {
+         color: #4e54c8;
+         text-decoration: underline;
+         }
+         .error {
+         margin-top: 12px;
+         color: #ff5555;
+         min-height: 1.3em;
+         font-weight: bold;
+         }
+      </style>
+   </head>
+   <body>
+      <div class="container">
+         <h2>Prijava</h2>
+         <input type="text" id="username" placeholder="Korisničko ime" autocomplete="off" />
+         <input type="password" id="password" placeholder="Lozinka" autocomplete="off" />
+         <button id="login-btn">Prijavi se</button>
+         <div class="error" id="error-message"></div>
+         <div class="switch-link" onclick="window.location.href='sign_up.html'">
+            Nemate račun? <strong>Registrujte se</strong>
+         </div>
+      </div>
+      <script>
+         const usernameInput = document.getElementById("username");
+         const passwordInput = document.getElementById("password");
+         const errorMessage = document.getElementById("error-message");
+         const loginBtn = document.getElementById("login-btn");
+         
+         loginBtn.addEventListener("click", () => {
+           const username = usernameInput.value.trim();
+           const password = passwordInput.value.trim();
+           const savedUser = localStorage.getItem("username");
+           const savedPass = localStorage.getItem("password");
+         
+           if (!username || !password) {
+             errorMessage.textContent = "Molimo unesite korisničko ime i lozinku.";
+             return;
+           }
+         
+           if (username === savedUser && password === savedPass) {
+             localStorage.setItem("isLoggedIn", "true");
+             window.location.href = "profile.html";
+           } else {
+             errorMessage.textContent = "Pogrešno korisničko ime ili lozinka!";
+           }
+         });
+         
+         // Ako je već prijavljen - preusmjeri
+         if (localStorage.getItem("isLoggedIn") === "true") {
+           window.location.href = "profile.html";
+         }
+      </script>
+   </body>
+</html>
