@@ -2,385 +2,385 @@
   {
     "date": "2025-10-21",
     "home": "Oklahoma City Thunder",
-    "homeLogo": "/icons/team/thunder.png",
+    "homeLogo": "icons/team/thunder.png",
     "away": "Houston Rockets",
-    "awayLogo": "/icons/team/rockets.png",
+    "awayLogo": "icons/team/rockets.png",
     "arena": "Paycom Center, Oklahoma City"
   },
   {
     "date": "2025-10-21",
     "home": "Los Angeles Lakers",
-    "homeLogo": "/icons/team/lakers.png",
+    "homeLogo": "icons/team/lakers.png",
     "away": "Golden State Warriors",
-    "awayLogo": "/icons/tema_logo/warriors.svg",
+    "awayLogo": "icons/tema_logo/warriors.svg",
     "arena": "Crypto.com Arena, Los Angeles"
   },
   {
     "date": "2025-10-22",
     "home": "Charlotte Hornets",
-    "homeLogo": "/icons/team/hornets.png",
+    "homeLogo": "icons/team/hornets.png",
     "away": "Brooklyn Nets",
-    "awayLogo": "/icons/team/nets.png",
+    "awayLogo": "icons/team/nets.png",
     "arena": "Spectrum Center, Charlotte"
   },
   {
     "date": "2025-10-22",
     "home": "New York Knicks",
-    "homeLogo": "/icons/team/knicks.png",
+    "homeLogo": "icons/team/knicks.png",
     "away": "Cleveland Cavaliers",
-    "awayLogo": "/icons/team/cavs.png",
+    "awayLogo": "icons/team/cavs.png",
     "arena": "Madison Square Garden (IV), New York"
   },
   {
     "date": "2025-10-22",
     "home": "Orlando Magic",
-    "homeLogo": "/icons/team/magic.png",
+    "homeLogo": "icons/team/magic.png",
     "away": "Miami Heat",
-    "awayLogo": "/icons/team/miami.png",
+    "awayLogo": "icons/team/miami.png",
     "arena": "Kia Center, Orlando"
   },
   {
     "date": "2025-10-22",
     "home": "Boston Celtics",
-    "homeLogo": "/icons/team/celtics.png",
+    "homeLogo": "icons/team/celtics.png",
     "away": "Philadelphia 76ers",
-    "awayLogo": "/icons/team/philly.png",
+    "awayLogo": "icons/team/philly.png",
     "arena": "TD Garden, Boston"
   },
   {
     "date": "2025-10-22",
     "home": "Atlanta Hawks",
-    "homeLogo": "/icons/team/hawks.png",
+    "homeLogo": "icons/team/hawks.png",
     "away": "Toronto Raptors",
-    "awayLogo": "/icons/team/raptors.png",
+    "awayLogo": "icons/team/raptors.png",
     "arena": "State Farm Arena, Atlanta"
   },
   {
     "date": "2025-10-22",
     "home": "Chicago Bulls",
-    "homeLogo": "/icons/team/bulls.png",
+    "homeLogo": "icons/team/bulls.png",
     "away": "Detroit Pistons",
-    "awayLogo": "/icons/team/pistons.png",
+    "awayLogo": "icons/team/pistons.png",
     "arena": "United Center, Chicago"
   },
   {
     "date": "2025-10-22",
     "home": "Memphis Grizzlies",
-    "homeLogo": "/icons/team/grizzlies.png",
+    "homeLogo": "icons/team/grizzlies.png",
     "away": "New Orleans Pelicans",
-    "awayLogo": "/icons/team/pelicans.png",
+    "awayLogo": "icons/team/pelicans.png",
     "arena": "FedExForum, Memphis"
   },
   {
     "date": "2025-10-22",
     "home": "Milwaukee Bucks",
-    "homeLogo": "/icons/team/bucks.png",
+    "homeLogo": "icons/team/bucks.png",
     "away": "Washington Wizards",
-    "awayLogo": "/icons/team/wizards.png",
+    "awayLogo": "icons/team/wizards.png",
     "arena": "Fiserv Forum, Milwaukee"
   },
   {
     "date": "2025-10-22",
     "home": "Utah Jazz",
-    "homeLogo": "/icons/tema_logo/jazz.svg",
+    "homeLogo": "icons/tema_logo/jazz.svg",
     "away": "Los Angeles Clippers",
-    "awayLogo": "/icons/team/clippers.png",
+    "awayLogo": "icons/team/clippers.png",
     "arena": "Delta Center, Salt Lake City"
   },
   {
     "date": "2025-10-22",
     "home": "Dallas Mavericks",
-    "homeLogo": "/icons/team/mavericks.png",
+    "homeLogo": "icons/team/mavericks.png",
     "away": "San Antonio Spurs",
-    "awayLogo": "/icons/team/spurs.png",
+    "awayLogo": "icons/team/spurs.png",
     "arena": "American Airlines Center, Dallas"
   },
   {
     "date": "2025-10-22",
     "home": "Portland Trail Blazers",
-    "homeLogo": "/icons/team/blazers.webp",
+    "homeLogo": "icons/team/blazers.webp",
     "away": "Minnesota Timberwolves",
-    "awayLogo": "/icons/team/timberwolves.png",
+    "awayLogo": "icons/team/timberwolves.png",
     "arena": "Moda Center, Portland"
   },
   {
     "date": "2025-10-22",
     "home": "Phoenix Suns",
-    "homeLogo": "/icons/team/suns.png",
+    "homeLogo": "icons/team/suns.png",
     "away": "Sacramento Kings",
-    "awayLogo": "/icons/team/kings.png",
+    "awayLogo": "icons/team/kings.png",
     "arena": "PHX Arena, Phoenix"
   },
   {
     "date": "2025-10-23",
     "home": "Indiana Pacers",
-    "homeLogo": "/icons/team/pacers.gif",
+    "homeLogo": "icons/team/pacers.gif",
     "away": "Oklahoma City Thunder",
-    "awayLogo": "/icons/team/thunder.png",
+    "awayLogo": "icons/team/thunder.png",
     "arena": "Gainbridge Fieldhouse, Indianapolis"
   },
   {
     "date": "2025-10-23",
     "home": "Golden State Warriors",
-    "homeLogo": "/icons/tema_logo/warriors.svg",
+    "homeLogo": "icons/tema_logo/warriors.svg",
     "away": "Denver Nuggets",
-    "awayLogo": "/icons/team/denver.png",
+    "awayLogo": "icons/team/denver.png",
     "arena": "Chase Center, San Francisco"
   },
   {
     "date": "2025-10-24",
     "home": "Orlando Magic",
-    "homeLogo": "/icons/team/magic.png",
+    "homeLogo": "icons/team/magic.png",
     "away": "Atlanta Hawks",
-    "awayLogo": "/icons/team/hawks.png",
+    "awayLogo": "icons/team/hawks.png",
     "arena": "Kia Center, Orlando"
   },
   {
     "date": "2025-10-24",
     "home": "Brooklyn Nets",
-    "homeLogo": "/icons/team/nets.png",
+    "homeLogo": "icons/team/nets.png",
     "away": "Cleveland Cavaliers",
-    "awayLogo": "/icons/team/cavs.png",
+    "awayLogo": "icons/team/cavs.png",
     "arena": "Barclays Center, Brooklyn"
   },
   {
     "date": "2025-10-24",
     "home": "Toronto Raptors",
-    "homeLogo": "/icons/team/raptors.png",
+    "homeLogo": "icons/team/raptors.png",
     "away": "Milwaukee Bucks",
-    "awayLogo": "/icons/team/bucks.png",
+    "awayLogo": "icons/team/bucks.png",
     "arena": "Scotiabank Arena, Toronto"
   },
   {
     "date": "2025-10-24",
     "home": "New York Knicks",
-    "homeLogo": "/icons/team/knicks.png",
+    "homeLogo": "icons/team/knicks.png",
     "away": "Boston Celtics",
-    "awayLogo": "/icons/team/celtics.png",
+    "awayLogo": "icons/team/celtics.png",
     "arena": "Madison Square Garden (IV), New York"
   },
   {
     "date": "2025-10-24",
     "home": "Houston Rockets",
-    "homeLogo": "/icons/team/rockets.png",
+    "homeLogo": "icons/team/rockets.png",
     "away": "Detroit Pistons",
-    "awayLogo": "/icons/team/pistons.png",
+    "awayLogo": "icons/team/pistons.png",
     "arena": "Toyota Center, Houston"
   },
   {
     "date": "2025-10-24",
     "home": "New Orleans Pelicans",
-    "homeLogo": "/icons/team/pelicans.png",
+    "homeLogo": "icons/team/pelicans.png",
     "away": "San Antonio Spurs",
-    "awayLogo": "/icons/team/spurs.png",
+    "awayLogo": "icons/team/spurs.png",
     "arena": "Smoothie King Center, New Orleans"
   },
   {
     "date": "2025-10-24",
     "home": "Memphis Grizzlies",
-    "homeLogo": "/icons/team/grizzlies.png",
+    "homeLogo": "icons/team/grizzlies.png",
     "away": "Miami Heat",
-    "awayLogo": "/icons/team/miami.png",
+    "awayLogo": "icons/team/miami.png",
     "arena": "FedExForum, Memphis"
   },
   {
     "date": "2025-10-24",
     "home": "Dallas Mavericks",
-    "homeLogo": "/icons/team/mavericks.png",
+    "homeLogo": "icons/team/mavericks.png",
     "away": "Washington Wizards",
-    "awayLogo": "/icons/team/wizards.png",
+    "awayLogo": "icons/team/wizards.png",
     "arena": "American Airlines Center, Dallas"
   },
   {
     "date": "2025-10-24",
     "home": "Los Angeles Lakers",
-    "homeLogo": "/icons/team/lakers.png",
+    "homeLogo": "icons/team/lakers.png",
     "away": "Minnesota Timberwolves",
-    "awayLogo": "/icons/team/timberwolves.png",
+    "awayLogo": "icons/team/timberwolves.png",
     "arena": "Crypto.com Arena, Los Angeles"
   },
   {
     "date": "2025-10-24",
     "home": "Portland Trail Blazers",
-    "homeLogo": "/icons/team/blazers.webp",
+    "homeLogo": "icons/team/blazers.webp",
     "away": "Golden State Warriors",
-    "awayLogo": "/icons/tema_logo/warriors.svg",
+    "awayLogo": "icons/tema_logo/warriors.svg",
     "arena": "Moda Center, Portland"
   },
   {
     "date": "2025-10-25",
     "home": "Orlando Magic",
-    "homeLogo": "/icons/team/magic.png",
+    "homeLogo": "icons/team/magic.png",
     "away": "Chicago Bulls",
-    "awayLogo": "/icons/team/bulls.png",
+    "awayLogo": "icons/team/bulls.png",
     "arena": "Kia Center, Orlando"
   },
   {
     "date": "2025-10-25",
     "home": "Atlanta Hawks",
-    "homeLogo": "/icons/team/hawks.png",
+    "homeLogo": "icons/team/hawks.png",
     "away": "Oklahoma City Thunder",
-    "awayLogo": "/icons/team/thunder.png",
+    "awayLogo": "icons/team/thunder.png",
     "arena": "State Farm Arena, Atlanta"
   },
   {
     "date": "2025-10-25",
     "home": "Philadelphia 76ers",
-    "homeLogo": "/icons/team/philly.png",
+    "homeLogo": "icons/team/philly.png",
     "away": "Charlotte Hornets",
-    "awayLogo": "/icons/team/hornets.png",
+    "awayLogo": "icons/team/hornets.png",
     "arena": "Xfinity Mobile Arena, Philadelphia"
   },
   {
     "date": "2025-10-25",
     "home": "Memphis Grizzlies",
-    "homeLogo": "/icons/team/grizzlies.png",
+    "homeLogo": "icons/team/grizzlies.png",
     "away": "Indiana Pacers",
-    "awayLogo": "/icons/team/pacers.gif",
+    "awayLogo": "icons/team/pacers.gif",
     "arena": "FedExForum, Memphis"
   },
   {
     "date": "2025-10-25",
     "home": "Denver Nuggets",
-    "homeLogo": "/icons/team/denver.png",
+    "homeLogo": "icons/team/denver.png",
     "away": "Phoenix Suns",
-    "awayLogo": "/icons/team/suns.png",
+    "awayLogo": "icons/team/suns.png",
     "arena": "Ball Arena, Denver"
   },
   {
     "date": "2025-10-26",
     "home": "San Antonio Spurs",
-    "homeLogo": "/icons/team/spurs.png",
+    "homeLogo": "icons/team/spurs.png",
     "away": "Brooklyn Nets",
-    "awayLogo": "/icons/team/nets.png",
+    "awayLogo": "icons/team/nets.png",
     "arena": "Frost Bank Center, San Antonio"
   },
   {
     "date": "2025-10-26",
     "home": "Detroit Pistons",
-    "homeLogo": "/icons/team/pistons.png",
+    "homeLogo": "icons/team/pistons.png",
     "away": "Boston Celtics",
-    "awayLogo": "/icons/team/celtics.png",
+    "awayLogo": "icons/team/celtics.png",
     "arena": "Little Caesars Arena, Detroit"
   },
   {
     "date": "2025-10-26",
     "home": "Washington Wizards",
-    "homeLogo": "/icons/team/wizards.png",
+    "homeLogo": "icons/team/wizards.png",
     "away": "Charlotte Hornets",
-    "awayLogo": "/icons/team/hornets.png",
+    "awayLogo": "icons/team/hornets.png",
     "arena": "Capital One Arena, Washington"
   },
   {
     "date": "2025-10-26",
     "home": "Miami Heat",
-    "homeLogo": "/icons/team/miami.png",
+    "homeLogo": "icons/team/miami.png",
     "away": "New York Knicks",
-    "awayLogo": "/icons/team/knicks.png",
+    "awayLogo": "icons/team/knicks.png",
     "arena": "Kaseya Center, Miami"
   },
   {
     "date": "2025-10-26",
     "home": "Cleveland Cavaliers",
-    "homeLogo": "/icons/team/cavs.png",
+    "homeLogo": "icons/team/cavs.png",
     "away": "Milwaukee Bucks",
-    "awayLogo": "/icons/team/bucks.png",
+    "awayLogo": "icons/team/bucks.png",
     "arena": "Rocket Arena, Cleveland"
   },
   {
     "date": "2025-10-26",
     "home": "Minnesota Timberwolves",
-    "homeLogo": "/icons/team/timberwolves.png",
+    "homeLogo": "icons/team/timberwolves.png",
     "away": "Indiana Pacers",
-    "awayLogo": "/icons/team/pacers.gif",
+    "awayLogo": "icons/team/pacers.gif",
     "arena": "Target Center, Minneapolis"
   },
   {
     "date": "2025-10-26",
     "home": "Dallas Mavericks",
-    "homeLogo": "/icons/team/mavericks.png",
+    "homeLogo": "icons/team/mavericks.png",
     "away": "Toronto Raptors",
-    "awayLogo": "/icons/team/raptors.png",
+    "awayLogo": "icons/team/raptors.png",
     "arena": "American Airlines Center, Dallas"
   },
   {
     "date": "2025-10-26",
     "home": "Sacramento Kings",
-    "homeLogo": "/icons/tema_logo/kings.svg",
+    "homeLogo": "icons/tema_logo/kings.svg",
     "away": "Los Angeles Lakers",
-    "awayLogo": "/icons/team/lakers.png",
+    "awayLogo": "icons/team/lakers.png",
     "arena": "Golden 1 Center, Sacramento"
   },
   {
     "date": "2025-10-26",
     "home": "Los Angeles Clippers",
-    "homeLogo": "/icons/team/clippers.png",
+    "homeLogo": "icons/team/clippers.png",
     "away": "Portland Trail Blazers",
-    "awayLogo": "/icons/team/blazers.webp",
+    "awayLogo": "icons/team/blazers.webp",
     "arena": "Intuit Dome, Los Angeles"
   },
   {
     "date": "2025-10-30",
     "home": "Charlotte Hornets",
-    "homeLogo": "/icons/team/hornets.png",
+    "homeLogo": "icons/team/hornets.png",
     "away": "Orlando Magic",
-    "awayLogo": "/icons/team/magic.png",
+    "awayLogo": "icons/team/magic.png",
     "arena": "Spectrum Center, Charlotte"
   },
   {
     "date": "2025-10-30",
     "home": "Milwaukee Bucks",
-    "homeLogo": "/icons/team/bucks.png",
+    "homeLogo": "icons/team/bucks.png",
     "away": "Golden State Warriors",
-    "awayLogo": "/icons/tema_logo/warriors.svg",
+    "awayLogo": "icons/tema_logo/warriors.svg",
     "arena": "Fiserv Forum, Milwaukee"
   },
   {
     "date": "2025-10-30",
     "home": "Oklahoma City Thunder",
-    "homeLogo": "/icons/team/thunder.png",
+    "homeLogo": "icons/team/thunder.png",
     "away": "Washington Wizards",
-    "awayLogo": "/icons/team/wizards.png",
+    "awayLogo": "icons/team/wizards.png",
     "arena": "Paycom Center, Oklahoma City"
   },
   {
     "date": "2025-10-30",
     "home": "San Antonio Spurs",
-    "homeLogo": "/icons/team/spurs.png",
+    "homeLogo": "icons/team/spurs.png",
     "away": "Miami Heat",
-    "awayLogo": "/icons/team/miami.png",
+    "awayLogo": "icons/team/miami.png",
     "arena": "Frost Bank Center, San Antonio"
   },
   {
     "date": "2025-10-31",
     "home": "Indiana Pacers",
-    "homeLogo": "/icons/team/pacers.gif",
+    "homeLogo": "icons/team/pacers.gif",
     "away": "Atlanta Hawks",
-    "awayLogo": "/icons/team/hawks.png",
+    "awayLogo": "icons/team/hawks.png",
     "arena": "Gainbridge Fieldhouse, Indianapolis"
   },
   {
     "date": "2025-10-31",
     "home": "Philadelphia 76ers",
-    "homeLogo": "/icons/team/philly.png",
+    "homeLogo": "icons/team/philly.png",
     "away": "Boston Celtics",
-    "awayLogo": "/icons/team/celtics.png",
+    "awayLogo": "icons/team/celtics.png",
     "arena": "Xfinity Mobile Arena, Philadelphia"
   },
   {
     "date": "2025-10-31",
     "home": "Cleveland Cavaliers",
-    "homeLogo": "/icons/team/cavs.png",
+    "homeLogo": "icons/team/cavs.png",
     "away": "Toronto Raptors",
-    "awayLogo": "/icons/team/raptors.png",
+    "awayLogo": "icons/team/raptors.png",
     "arena": "Rocket Arena, Cleveland"
   },
   {
     "date": "2025-10-31",
     "home": "Chicago Bulls",
-    "homeLogo": "/icons/team/bulls.png",
+    "homeLogo": "icons/team/bulls.png",
     "away": "New York Knicks",
-    "awayLogo": "/icons/team/knicks.png",
+    "awayLogo": "icons/team/knicks.png",
     "arena": "United Center, Chicago"
   }
 ]
