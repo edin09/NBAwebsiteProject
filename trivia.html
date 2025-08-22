@@ -419,6 +419,33 @@
          } else {
              console.error("Element s klasom 'logo' unutar '.logo-footer' nije pronađen.");
          }
+
+         // Hamburger meni funkcionalnost
+document.addEventListener("DOMContentLoaded", () => {
+   const hamburger = document.querySelector(".hamburger");
+   const navMenu = document.querySelector("#main-nav");
+
+   if (hamburger && navMenu) {
+      hamburger.addEventListener("click", () => {
+         navMenu.classList.toggle("active");
+         hamburger.classList.toggle("active"); // Za animaciju hamburger ikone
+         console.log("Hamburger meni kliknut, active stanje:", navMenu.classList.contains("active")); // Debugging
+      });
+
+      // Zatvori meni ako se klikne na link unutar menija
+      const navLinks = document.querySelectorAll("#main-nav .navigation, #main-nav .auth-link");
+      navLinks.forEach(link => {
+         link.addEventListener("click", () => {
+            navMenu.classList.remove("active");
+            hamburger.classList.remove("active");
+            console.log("Nav link kliknut, meni zatvoren"); // Debugging
+         });
+      });
+   } else {
+      console.error("Hamburger ili main-nav elementi nisu pronađeni.");
+   }
+});
+
       </script>
       <footer class="footer">
          <div class="footer-line"></div>
